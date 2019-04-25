@@ -60,7 +60,6 @@ public class Model
             dates.add(Integer.toString(purchases[i].getDate()));
             cats.addAll(purchases[i].getMainCategories().keySet());
             subcats.addAll(purchases[i].getSubcategories().keySet());
-            System.out.println(purchases[i].toString());
         }
     }
 

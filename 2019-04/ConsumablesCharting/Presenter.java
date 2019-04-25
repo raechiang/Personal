@@ -111,8 +111,6 @@ public class Presenter
                         if (plSelection.equals("Pie Chart"))
                         {
                             // Pie chart wanted
-                            // make a title for the chart
-
                             // set a message for the user
                             view.setMessage(title + " requested.");
                             // set the chart panel,
@@ -129,10 +127,6 @@ public class Presenter
                             String spec = generateLineSpecString(
                                     getCSCode(csSelection),
                                     view.getCheckSelections());
-                            // make a title for the chart
-                            /*String title = plSelection
-                                    + generateChartTitle(getCSCode(csSelection),
-                                            spec);*/
                             // set a message for the user
                             view.setMessage(title + " requested.");
                             // set the chart panel,
