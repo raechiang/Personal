@@ -14,8 +14,8 @@ package chart;
  * new lines, in a format like so: date;category_name;amount
  * <ul>
  * <li>date: in the format of yyyymm</li>
- * <li>category_name: any kind of string, but subcategories require the prefix
- *     of "g_" to be saved as a subcategory</li>
+ * <li>category name: any kind of single-word string, but subcategories require
+ *     the prefix of "g_" to be saved as a subcategory</li>
  * <li>amount: some non-negative number with no more than two decimal places but
  *     no less than one if a decimal point is present</li>
  * </ul>

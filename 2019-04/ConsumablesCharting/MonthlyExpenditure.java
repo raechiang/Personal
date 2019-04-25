@@ -59,7 +59,7 @@ public class MonthlyExpenditure
      */
     public void addCat(String id, double amount)
     {
-        if (id.contains("g_"))
+        if (id.matches("g_\\w+"))
         {
             // removes the g_ in the name
             String realID = id.substring(2);
