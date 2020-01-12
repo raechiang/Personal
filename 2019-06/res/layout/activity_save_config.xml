@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SaveConfigActivity">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+
+    <ScrollView
+        android:id="@+id/save_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignBottom="@id/save_start_time_error_button"
+                    android:gravity="center"
+                    android:text="@string/text_startTime"
+                    android:textSize="@dimen/text_size_med_display" />
+                <ImageButton
+                    android:id="@+id/save_start_time_error_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_error_outline_black_24dp"
+                    style="?android:attr/borderlessButtonStyle" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center" >
+                <EditText
+                    android:id="@+id/save_t0_min_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_initial_zeroes"
+                    android:maxLength="2"
+                    android:textSize="@dimen/text_size_med_display"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/save_t0_sec_edit_text"
+                    android:nextFocusRight="@+id/save_t0_sec_edit_text"
+                    android:nextFocusDown="@+id/save_t0_sec_edit_text" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_unit_minutes"
+                    android:textSize="@dimen/text_size_small_display" />
+                <EditText
+                    android:id="@+id/save_t0_sec_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="2"
+                    android:hint="@string/text_initial_zeroes"
+                    android:textSize="@dimen/text_size_med_display"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/save_td_min_edit_text"
+                    android:nextFocusDown="@+id/save_td_min_edit_text"
+                    android:nextFocusLeft="@+id/save_t0_min_edit_text" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_unit_seconds"
+                    android:textSize="@dimen/text_size_small_display" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignBottom="@id/save_increment_error_button"
+                    android:text="@string/text_incrementalTime"
+                    android:textSize="@dimen/text_size_med_display" />
+                <ImageButton
+                    android:id="@+id/save_increment_error_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_error_outline_black_24dp"
+                    style="?android:attr/borderlessButtonStyle" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <EditText
+                    android:id="@+id/save_td_min_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_initial_zeroes"
+                    android:maxLength="2"
+                    android:textSize="@dimen/text_size_med_display"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/save_td_sec_edit_text"
+                    android:nextFocusDown="@+id/save_td_sec_edit_text"
+                    android:nextFocusRight="@+id/save_td_sec_edit_text" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_unit_minutes"
+                    android:textSize="@dimen/text_size_small_display" />
+                <EditText
+                    android:id="@+id/save_td_sec_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLength="2"
+                    android:hint="@string/text_initial_zeroes"
+                    android:textSize="@dimen/text_size_med_display"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/save_reps_edit_text"
+                    android:nextFocusDown="@+id/save_reps_edit_text"
+                    android:nextFocusLeft="@+id/save_td_min_edit_text" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_unit_seconds"
+                    android:textSize="@dimen/text_size_small_display" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignBottom="@id/save_total_infusions_error_button"
+                    android:text="@string/text_total_infusions"
+                    android:textSize="@dimen/text_size_med_display"/>
+                <ImageButton
+                    android:id="@+id/save_total_infusions_error_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_error_outline_black_24dp"
+                    style="?android:attr/borderlessButtonStyle" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <EditText
+                    android:id="@+id/save_reps_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_initial_zeroes"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textSize="@dimen/text_size_med_display"
+                    android:nextFocusForward="@+id/save_name_edit_text"
+                    android:nextFocusDown="@+id/save_name_edit_text" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignBottom="@id/save_name_error_button"
+                    android:text="@string/text_name"
+                    android:textSize="@dimen/text_size_med_display" />
+                <ImageButton
+                    android:id="@+id/save_name_error_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_error_outline_black_24dp"
+                    style="?android:attr/borderlessButtonStyle" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <EditText
+                    android:id="@+id/save_name_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_your_name"
+                    android:inputType="textPersonName|textCapWords"
+                    android:textSize="@dimen/text_size_med_display" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/save_fav_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/fav_switch_button" />
+
+            <Button
+                android:id="@+id/show_more_save_fields_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/show_more_button" />
+
+            <LinearLayout
+                android:id="@+id/save_more_fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/animation_radio_group" />
+
+                <RadioGroup
+                    android:id="@+id/animation_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp">
+
+                    <RadioButton
+                        android:id="@+id/animation_radio_button_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+
+                    <RadioButton
+                        android:id="@+id/animation_radio_button_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+
+                    <RadioButton
+                        android:id="@+id/animation_radio_button_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/color_radio_group" />
+
+                <RadioGroup
+                    android:id="@+id/color_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp">
+
+                    <RadioButton
+                        android:id="@+id/color_radio_button_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+
+                    <RadioButton
+                        android:id="@+id/color_radio_button_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+
+                    <RadioButton
+                        android:id="@+id/color_radio_button_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/sound_radio_group" />
+
+                <RadioGroup
+                    android:id="@+id/sound_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp">
+
+                    <RadioButton
+                        android:id="@+id/sound_radio_button_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+
+                    <RadioButton
+                        android:id="@+id/sound_radio_button_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+
+                    <RadioButton
+                        android:id="@+id/sound_radio_button_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/placeholder" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/text_extra_notes"
+                    android:textSize="@dimen/text_size_med_display" />
+
+                <EditText
+                    android:id="@+id/save_notes_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textSize="@dimen/text_size_small_display" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:onClick="clickDelete"
+                android:text="@string/delete_button" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="saveConfigActivity"
+        android:text="@string/go_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

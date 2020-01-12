@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoadConfigActivity">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <include
+        layout="@layout/content_load_config"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
+        />
+
+    <TextView
+        android:id="@+id/load_empty_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
+        android:text="@string/text_empty_list"
+        android:textSize="@dimen/text_size_med_display"
+        android:gravity="center"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/load_go_floating_action_button"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:layout_marginRight="@dimen/padding_16"
+        android:layout_marginBottom="@dimen/padding_16"
+        android:clickable="true"
+        android:onClick="startBlankConfigActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_play_arrow_black_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/load_save_floating_action_button"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginLeft="@dimen/padding_16"
+        android:layout_marginBottom="@dimen/padding_16"
+        android:clickable="true"
+        android:onClick="startNewSaveConfigActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_add_black_24dp" />
+
+</android.support.constraint.ConstraintLayout>
