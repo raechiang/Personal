@@ -11,7 +11,7 @@ Below is an example of one of the default timers. The lower right-hand button is
 <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss06_load_black_sl_timer.png" width="500">
 <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss05_load_green_timer.png" width="500">
 
-You may add a new timer using the (+) Floating Action Button in the lower left of the list of timers, which will take you to a different screen. There are three required fields: Start Timer, Total Infusions, and Name.
+You may add a new timer using the `+` Floating Action Button in the lower left of the list of timers, which will take you to a different screen. There are three required fields: Start Timer, Total Infusions, and Name.
 
 <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss01_save_new.png" width="500">
 
