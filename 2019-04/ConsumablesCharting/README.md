@@ -5,4 +5,7 @@ This program makes a pie or line chart given a properly-formatted file of data. 
 - amount: some non-negative number with no more than two decimal places but no less than one if a decimal point is present
 Although it was originally intended for general consumables with the subdivision of groceries, it could probably be extended for anything and one subcategory type (just keep the "g_" key prefix).
 ## Sample Output
+Pie:
 ![Sample 0](https://github.com/raechiang/Personal/blob/master/2019-04/ConsumablesCharting/Examples/pic00.png)
+Line:
+![Sample 1](https://github.com/raechiang/Personal/blob/master/2019-04/ConsumablesCharting/Examples/pic01.png)
