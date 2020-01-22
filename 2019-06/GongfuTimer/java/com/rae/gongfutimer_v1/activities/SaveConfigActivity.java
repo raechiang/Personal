@@ -10,12 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -35,7 +33,7 @@ import java.util.Locale;
 
 import static android.view.View.FOCUS_DOWN;
 
-public class SaveConfigActivity extends AppCompatActivity implements DeleteConfirmationDialogFragment.DeleteConfirmationDialogListener
+public class SaveConfigActivity extends AppCompatActivity implements DeleteConfirmationDialogFragment.DeleteConfirmationDialogListener, LoadConfigActivity.LoadConfigIntentGenerator
 {
     public final static int NEW_UNSAVED_TIMER = -1;
 
@@ -240,49 +238,18 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
         if (status == 0)
         {
             // no problems found with fields
-            makeConstructiveLoadIntent();
+            //makeConstructiveLoadIntent();
+            // TODO: Saving Favourite to the TimeConfig was done in the old method that was used. As that method is now deleted, it no longer saves adjustments to favourites. Please fix.
+            //  You can see it here:
+            //        Switch favSwitch = (Switch) findViewById(R.id.save_fav_switch);
+            //        timeConfig.setFavorite(favSwitch.isChecked());
+            startActivity(makeLoadConfigIntent(selectAction(true, position), position, timeConfig));
+            finish();
         }
         else
         {
             displayError(status);
         }
-    }
-
-    private void makeConstructiveLoadIntent()
-    {
-        Intent intent = new Intent(this, LoadConfigActivity.class);
-
-        if (position == -1)
-        {
-            // add new
-            intent.putExtra(getString(R.string.load_action_extra), LoadConfigActivity.ACTION_ADD);
-        }
-        else
-        {
-            // change existing
-            intent.putExtra(getString(R.string.load_action_extra), LoadConfigActivity.ACTION_EDIT);
-        }
-
-        Switch favSwitch = (Switch) findViewById(R.id.save_fav_switch);
-        timeConfig.setFavorite(favSwitch.isChecked());
-
-        intent.putExtra(getString(R.string.timer_extra), timeConfig);
-        intent.putExtra(getString(R.string.position_extra), position);
-
-        startActivity(intent);
-        finish();
-    }
-
-    private void makeDestructiveLoadIntent()
-    {
-        Intent intent = new Intent(this, LoadConfigActivity.class);
-
-        intent.putExtra(getString(R.string.load_action_extra), LoadConfigActivity.ACTION_DELETE);
-        intent.putExtra(getString(R.string.timer_extra), timeConfig);
-        intent.putExtra(getString(R.string.position_extra), position);
-
-        startActivity(intent);
-        finish();
     }
 
     @Override
@@ -492,11 +459,50 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
         if (clickedPositive)
         {
             Toast.makeText(SaveConfigActivity.this, "User clicked positive", Toast.LENGTH_LONG).show();
-            makeDestructiveLoadIntent();
+            //makeDestructiveLoadIntent();
+            startActivity(makeLoadConfigIntent(selectAction(false, position), position, timeConfig));
+            finish();
         }
         else
         {
             Toast.makeText(SaveConfigActivity.this, "User clicked negative", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public Intent makeLoadConfigIntent(LoadConfigActivity.Action actionCommand, int position, TimeConfig timeConfig)
+    {
+        Intent intent = new Intent(this, LoadConfigActivity.class);
+        // action
+        intent.putExtra(getString(R.string.load_action_extra), actionCommand);
+        // position
+        intent.putExtra(getString(R.string.position_extra), position);
+        // timeConfig
+        intent.putExtra(getString(R.string.timer_extra), timeConfig);
+        return intent;
+    }
+
+    private LoadConfigActivity.Action selectAction(boolean isConstructive, int position)
+    {
+        if (!isConstructive)
+        {
+            // want destructive command
+            // from SaveConfigActivity, can only delete the config being edited
+            return LoadConfigActivity.Action.DELETE_ONE;
+        }
+        else
+        {
+            // want constructive command
+            if (position == -1)
+            {
+                // TimeConfig is brand new, want to add a new one
+                return LoadConfigActivity.Action.ADD_ONE;
+            }
+            else
+            {
+                // TimeConfig already exists, want to edit it
+                return LoadConfigActivity.Action.EDIT_ONE;
+            }
         }
     }
 }

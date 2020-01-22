@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 
 import com.rae.gongfutimer_v1.R;
 import com.rae.gongfutimer_v1.activities.LoadConfigActivity;
+import com.rae.gongfutimer_v1.utils.TimeConfig;
 
 public class DeleteDialogPreference extends DialogPreference
 {
@@ -19,8 +20,7 @@ public class DeleteDialogPreference extends DialogPreference
     {
         Intent intent = new Intent(getContext(), LoadConfigActivity.class);
 
-        intent.putExtra(getContext().getString(R.string.load_action_extra), LoadConfigActivity.ACTION_DELETE);
-        intent.putExtra(getContext().getString(R.string.position_extra), LoadConfigActivity.ACTION_DELETE);
+        intent.putExtra(getContext().getString(R.string.load_action_extra), LoadConfigActivity.Action.DELETE_ALL);
 
         getContext().startActivity(intent);
     }

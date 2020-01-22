@@ -39,16 +39,70 @@ import com.rae.gongfutimer_v1.utils.TimeConfigDataSet;
 
 public class LoadConfigActivity extends AppCompatActivity implements DeleteConfirmationDialogFragment.DeleteConfirmationDialogListener
 {
-    // Constants for user actions
-    public static final int ACTION_ADD = -1;
-    public static final int ACTION_DELETE = -2;
-    public static final int ACTION_EDIT = -3;
-    public static final int ACTION_NONE = -4;
+    /*
+    0 | No action: NONE
+    1 | Add one config: ADD_ONE
+    2 | Restore default configs: RESTORE_DEFAULTS
+    3 | Edit one config at position: EDIT_ONE
+    4 | Delete one config at position: DELETE_ONE
+    5 | Remove default configs: REMOVE_DEFAULTS
+    6 | Delete all configs: DELETE_ALL
+     */
+
+    /**
+     * These fields correspond to the different actions that can be taken. They are to be used in
+     * Intents that are passed to this Activity, especially those that may modify the data set of
+     * timer configurations. The specific actions are as follows:
+     * <ul>
+     *     <li>NONE: No action</li>
+     *     <li>ADD_ONE: Add one config</li>
+     *     <li>RESTORE_DEFAULTS: Restore default configs</li>
+     *     <li>EDIT_ONE: Edit one config at position</li>
+     *     <li>DELETE_ONE: Delete one config at position</li>
+     *     <li>REMOVE_DEFAULTS: remove default configs</li>
+     *     <li>DELETE_ALL: delete all configs</li>
+     * </ul>
+     */
+    public enum Action
+    {
+        // no action
+        NONE,
+        // add actions
+        ADD_ONE, RESTORE_DEFAULTS,
+        // modifying action
+        EDIT_ONE,
+        // delete actions
+        DELETE_ONE, REMOVE_DEFAULTS, DELETE_ALL
+    }
+
+    /**
+     * This contains the saved time confugrations.
+     */
 
     TimeConfigDataSet timeConfigDataSet = new TimeConfigDataSet();
+
+    /**
+     * The adapter provides data to the views.
+     */
     private TimeConfigAdapter tcAdapter;
+
+    /**
+     * This boolean indicates whether a change has been done to the data set, so that the data set
+     * can be updated in {@link #updateSavedDataSet()}.
+     */
     private boolean changedConfigs;
+
+    /**
+     * This integer corresponds to the index of the time configuration that may have been selected
+     * for deletion from the popup menu. It is assigned in {@link #showPopupMenu(View, int)}, and it
+     * is eventually passed to {@link #onDialogResponseClick(boolean)}, which will call for its
+     * deletion.
+     */
     private int positionFocused;
+
+    /**
+     * This holds access to the RecyclerView. It is set up in {@link #init()}.
+     */
     private RecyclerView recyclerView;
 
     @Override
@@ -88,55 +142,67 @@ public class LoadConfigActivity extends AppCompatActivity implements DeleteConfi
         if (intent != null)
         {
             // Retrieve data
-            int actionCommand = intent.getIntExtra(getString(R.string.load_action_extra), ACTION_NONE);
+            Action action = (Action) intent.getSerializableExtra(getString(R.string.load_action_extra));
             int receivedPosition = intent.getIntExtra(getString(R.string.position_extra), timeConfigDataSet.size());
             TimeConfig receivedConfig = (TimeConfig) intent.getSerializableExtra(getString(R.string.timer_extra));
             // Act on Data
-            executeCommand(actionCommand, receivedPosition, receivedConfig);
+            if (action != null)
+            {
+                executeCommand(action, receivedPosition, receivedConfig);
+            }
         }
     }
-    private void executeCommand(int actionCommand, int receivedPosition, TimeConfig receivedConfig)
+    private void executeCommand(Action action, int receivedPosition, TimeConfig receivedConfig)
     {
-        switch (actionCommand)
+        // NONE, ADD_ONE, RESTORE_DEFAULTS, EDIT_ONE, DELETE_ONE, REMOVE_DEFAULTS, DELETE_ALL
+        switch (action)
         {
-            case ACTION_NONE:
+            case NONE:
                 break;
-            case ACTION_ADD:
+            case ADD_ONE:
                 // add timer
                 reportChanges(timeConfigDataSet.addNewTimeConfig(receivedConfig), "A new timer has been added.");
                 break;
-            case ACTION_DELETE:
+            case RESTORE_DEFAULTS:
+                // restore default configs
+                reportChanges(restoreDefaultTimers(), "Default timers have been restored.");
+                break;
+            case EDIT_ONE:
+                // edit config at position
                 if (receivedPosition >= 0 && receivedPosition < timeConfigDataSet.size())
                 {
-                    // delete one
+                    // check bounds, edit one
+                    reportChanges(timeConfigDataSet.editTimeConfig(receivedConfig, receivedPosition), "A timer has been modified.");
+                }
+                else
+                {
+                    // TODO: something bad happened
+                    Log.i("LOADCONFIGACTIVITY", "EDIT_ONE: Unexpected position provided.");
+                }
+                break;
+            case DELETE_ONE:
+                // delete config at position
+                if (receivedPosition >= 0 && receivedPosition < timeConfigDataSet.size())
+                {
+                    // check bounds, delete one
                     reportChanges(timeConfigDataSet.deleteTimeConfig(receivedPosition, receivedConfig), "A timer has been deleted.");
                 }
                 else
                 {
-                    // check if want delete default or delete all
-                    if (receivedPosition == ACTION_EDIT)
-                    {
-                        reportChanges(timeConfigDataSet.deleteDefaultTimeConfigs(), "Default timers have been deleted.");
-                    }
-                    else if (receivedPosition == ACTION_DELETE)
-                    {
-                        reportChanges(timeConfigDataSet.deleteAllTimeConfigs(), "All timers have been deleted.");
-                    }
+                    // TODO: something bad happened
+                    Log.i("LOADCONFIGACTIVITY", "DELETE_ONE: Unexpected position provided.");
                 }
                 break;
-            case ACTION_EDIT:
-                if (receivedPosition >= 0 && receivedPosition < timeConfigDataSet.size())
-                {
-                    // check bounds
-                    reportChanges(timeConfigDataSet.editTimeConfig(receivedConfig, receivedPosition), "A timer has been modified.");
-                }
-                else if (receivedPosition == ACTION_ADD)
-                {
-                    // check if want add defaults
-                    reportChanges(restoreDefaultTimers(), "Default timers have been restored.");
-                }
+            case REMOVE_DEFAULTS:
+                // remove default configs
+                reportChanges(timeConfigDataSet.deleteDefaultTimeConfigs(), "Default timers have been deleted.");
+                break;
+            case DELETE_ALL:
+                // delete all configs
+                reportChanges(timeConfigDataSet.deleteAllTimeConfigs(), "All timers have been deleted.");
                 break;
             default:
+                Log.i("LOADCONFIGACTIVITY", "Unexpected action received.");
                 break;
         }
     }
@@ -434,5 +500,10 @@ public class LoadConfigActivity extends AppCompatActivity implements DeleteConfi
             }
             return null;
         }
+    }
+
+    public interface LoadConfigIntentGenerator
+    {
+        public Intent makeLoadConfigIntent(LoadConfigActivity.Action actionCommand, int position, TimeConfig timeConfig);
     }
 }
