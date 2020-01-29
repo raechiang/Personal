@@ -11,6 +11,13 @@
             android:summary="Turn on or off sound notifications"
             android:defaultValue="true" />
 
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="temp_theme_select"
+            android:title="Enable Dark theme"
+            android:summary="Change the theme of the app"
+            android:defaultValue="false"
+            />
+
         <android.support.v7.preference.Preference
             android:key="feedback"
             android:title="Send Feedback"
@@ -24,37 +31,13 @@
         <android.support.v7.preference.Preference
             android:key="@string/restore_defaults_key"
             android:title="Restore Default Timers"
-            android:summary="Add original timers to saved timers">
-            <intent
-                android:targetPackage="com.rae.gongfutimer_v1"
-                android:targetClass="com.rae.gongfutimer_v1.activities.LoadConfigActivity">
-                <extra
-                    android:name="@string/load_action_extra"
-                    android:value="-3"
-                    />
-                <extra
-                    android:name="@string/position_extra"
-                    android:value="-1"
-                    />
-            </intent>
+            android:summary="Restore original timers to saved timers">
         </android.support.v7.preference.Preference>
 
         <android.support.v7.preference.Preference
-            android:key="@string/delete_defaults_key"
-            android:title="Delete Default Timers"
-            android:summary="Delete original timers from saved timers">
-            <intent
-                android:targetPackage="com.rae.gongfutimer_v1"
-                android:targetClass="com.rae.gongfutimer_v1.activities.LoadConfigActivity">
-                <extra
-                    android:name="@string/load_action_extra"
-                    android:value="-2"
-                    />
-                <extra
-                    android:name="@string/position_extra"
-                    android:value="-3"
-                    />
-            </intent>
+            android:key="@string/remove_defaults_key"
+            android:title="Remove Default Timers"
+            android:summary="Remove original timers from saved timers">
         </android.support.v7.preference.Preference>
 
         <com.rae.gongfutimer_v1.preferences.DeleteDialogPreference

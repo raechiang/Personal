@@ -11,8 +11,11 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
     @NonNull
     private String name;
     private long timerInitial;
-    private long timerIncrement;
+    //private long timerIncrement;
+    //private long[] timerIncrements;
     private int totalInfusions;
+    private TimeConfigIncrements timerIncrements;
+    //private boolean isLinear;
     private boolean isDefault;
     private boolean isFavorite;
     private String notes;
@@ -22,28 +25,44 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
      */
 
     // Custom pairs must follow format of "<type>:<data>;<type>:<data>;" and so on
-    public TimeConfig(UUID id, String name, long initial, long increment, int totalInfusions, String notes)
+    public TimeConfig(UUID id, String name, long initial, /*long increment,*/ long[] increments, boolean isLinear, int totalInfusions, String notes)
     {
         this.configId = id;
         this.name = name;
         this.timerInitial = initial;
-        this.timerIncrement = increment;
+        //this.timerIncrement = increment;
         this.totalInfusions = totalInfusions;
+        this.timerIncrements = new TimeConfigIncrements(increments, isLinear);
+
         this.isDefault = false;
         this.isFavorite = false;
         this.notes = notes;
     }
 
-    public TimeConfig(UUID id, String name, long initial, long increment, int totalInfusions, String notes, boolean isDefault)
+    public TimeConfig(UUID id, String name, long initial, /*long increment,*/ long[] increments, boolean isLinear, int totalInfusions, String notes, boolean isDefault)
     {
         this.configId = id;
         this.name = name;
         this.timerInitial = initial;
-        this.timerIncrement = increment;
+        //this.timerIncrement = increment;
         this.totalInfusions = totalInfusions;
         this.isDefault = isDefault;
+        this.timerIncrements = new TimeConfigIncrements(increments, isLinear);
+
         this.isFavorite = false;
         this.notes = notes;
+    }
+
+    TimeConfig(UUID id, String name, long initial, long increment, int totalInfusions, String notes, boolean isDefault)
+    {
+        this.configId = id;
+        this.name = name;
+        this.timerInitial = initial;
+        this.totalInfusions = totalInfusions;
+        timerIncrements = new TimeConfigIncrements(increment);
+        this.isFavorite = false;
+        this.notes = notes;
+        this.isDefault = true;
     }
 
     /**
@@ -55,7 +74,10 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
         this.name = "(name)";
         // minimum values
         this.timerInitial = 1;
-        this.timerIncrement = 0;
+        //this.timerIncrement = 0;
+        //this.isLinear = true;
+        //this.timerIncrements = new long[1];
+        this.timerIncrements = new TimeConfigIncrements();
         this.totalInfusions = 1;
         this.isDefault = false;
         this.isFavorite = false;
@@ -75,15 +97,30 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
     {
         return timerInitial;
     }
+    /*
+    public long[] getTimerIncrements()
+    {
+        return timerIncrements;
+    }
+    */
+    /*
     public long getTimerIncrement()
     {
         return timerIncrement;
+    }
+    */
+    public long getTimerIncrement(int position)
+    {
+        return timerIncrements.get(position);
     }
     public int getTotalInfusions()
     {
         return totalInfusions;
     }
-    public boolean getIsDefault() { return isDefault; }
+    public boolean getIsDefault()
+    {
+        return isDefault;
+    }
     public boolean getIsFavorite()
     {
         return isFavorite;
@@ -105,6 +142,7 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
             unsetDefault();
         }
     }
+    /*
     public void setTimerIncrement(long increment)
     {
         if (this.timerIncrement != increment)
@@ -112,6 +150,20 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
             this.timerIncrement = increment;
             unsetDefault();
         }
+    }
+    */
+    public void setTimerIncrements(long[] newIncrements, boolean isLinear)
+    {
+        timerIncrements.setIncrements(newIncrements, isLinear);
+    }
+    public boolean setTimerIncrement(int position, long value)
+    {
+        boolean wasSuccessful = timerIncrements.set(position, value);
+        if (wasSuccessful)
+        {
+            unsetDefault();
+        }
+        return wasSuccessful;
     }
     public void setTotalInfusions(int repetitions)
     {
@@ -129,7 +181,7 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
 
     public String toString()
     {
-        String s = "(" + name + "=" + timerInitial + "+" + timerIncrement + "for" + totalInfusions + ")";
+        String s = "(" + name + "=" + timerInitial + "+" + timerIncrements.toString() + "for" + totalInfusions + ")";
         return s;
     }
 
@@ -171,7 +223,8 @@ public class TimeConfig implements Serializable, Comparable<TimeConfig>
         // Only checks essentials
         return (this.name.equals(other.name)
                 && this.timerInitial == other.timerInitial
-                && this.timerIncrement == other.timerIncrement
+                //&& this.timerIncrement == other.timerIncrement
+                && this.timerIncrements.isEqual(other.timerIncrements)
                 && this.totalInfusions == other.totalInfusions);
     }
 

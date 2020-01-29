@@ -41,8 +41,8 @@ public class TimeConfigAdapter extends RecyclerView.Adapter<TimeConfigAdapter.Co
                     @Override
                     public void onClick(View v)
                     {
-                    listener.onMoreClicked(v, getAdapterPosition());
-                }
+                        listener.onMoreClicked(v, getAdapterPosition());
+                    }
                 });
             RelativeLayout timerElementInformation = (RelativeLayout) view.findViewById(R.id.load_timer_element_information);
             timerElementInformation.setOnClickListener(new View.OnClickListener()
@@ -88,7 +88,8 @@ public class TimeConfigAdapter extends RecyclerView.Adapter<TimeConfigAdapter.Co
                 TimeConfig tConfig = timeConfigDataSet.get(position);
                 holder.titleTextView.setText(tConfig.getName());
                 holder.timerInitialTextView.setText(getMSString(tConfig.getTimerInitial(), "Start"));
-                holder.timerIncrementTextView.setText(getMSString(tConfig.getTimerIncrement(), "Incr"));
+                // TODO: want multi-increments view? Maybe just append a ", ..."
+                holder.timerIncrementTextView.setText(getMSString(tConfig.getTimerIncrement(0), "Incr"));
                 holder.repetitionsTextView.setText(String.format(Locale.US, "%s\n%d", "Times", tConfig.getTotalInfusions()));
             }
         }

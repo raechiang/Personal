@@ -1,17 +1,8 @@
 package com.rae.gongfutimer_v1.activities;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.AnimationDrawable;
-import android.os.Build;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,11 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.rae.gongfutimer_v1.R;
@@ -75,7 +64,8 @@ public class TimerActivity extends AppCompatActivity
 
         timeConfig = (TimeConfig) intent.getSerializableExtra(getString(R.string.timer_extra));
         t0 = timeConfig.getTimerInitial();
-        td = timeConfig.getTimerIncrement();
+        // TODO: make multi increments
+        td = timeConfig.getTimerIncrement(0);
         r = timeConfig.getTotalInfusions();
 
         i = 0;
@@ -217,7 +207,8 @@ public class TimerActivity extends AppCompatActivity
         if (!(timerStarted))
         {
             updateNumberTextViews(t0, i, td);
-            long millisInFuture = timeConfig.getTimerInitial() + (i * timeConfig.getTimerIncrement());
+            // TODO: make multi-timer increments
+            long millisInFuture = timeConfig.getTimerInitial() + (i * timeConfig.getTimerIncrement(0));
             makeTimer(millisInFuture * 1000);
             timer.start();
             timerStarted = true;

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginEnd="?android:attr/scrollbarSize"
-    android:layout_marginRight="?android:attr/scrollbarSize">
+    android:layout_marginRight="?android:attr/scrollbarSize"
+    >
 
     <RelativeLayout
         android:id="@+id/load_timer_element_information"
@@ -42,7 +43,7 @@
                     android:text="(name)"
                     android:textStyle="bold"
                     android:singleLine="true"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical" />
             </RelativeLayout>
             <LinearLayout
                 android:layout_width="match_parent"

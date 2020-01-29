@@ -38,7 +38,7 @@ public class TimeConfigDataSet
         if (savedDefaultConfigs == null || savedDefaultConfigs.isEmpty())
         {
             // no defaults exist at the moment, so we can just add all of the defaults
-            returnValue |= timeConfigList.addAll(defaultTimeConfigs);
+            returnValue = timeConfigList.addAll(defaultTimeConfigs);
         }
         else
         {

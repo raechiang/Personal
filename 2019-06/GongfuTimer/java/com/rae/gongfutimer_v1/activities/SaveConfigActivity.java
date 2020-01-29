@@ -124,6 +124,24 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
                 }
             }
         });
+
+        final Switch favoriteSwitch = (Switch) findViewById(R.id.save_fav_switch);
+        favoriteSwitch.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                // check if checked
+                if (favoriteSwitch.isChecked())
+                {
+                    timeConfig.setFavorite(true);
+                }
+                else
+                {
+                    timeConfig.setFavorite(false);
+                }
+            }
+        });
     }
 
     private void setVariableFields()
@@ -157,7 +175,8 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
             t0MinEditText.setText(startTimerChars, 0, QuickTimerString.PLACE_VALUES);
             t0SecEditText.setText(startTimerChars, QuickTimerString.PLACE_VALUES, QuickTimerString.PLACE_VALUES);
             // set increment time
-            char[] incrementTimeChars = MinSecQuickTimerString.getTimerString(timeConfig.getTimerIncrement());
+            // TODO: set multi-increment time
+            char[] incrementTimeChars = MinSecQuickTimerString.getTimerString(timeConfig.getTimerIncrement(0));
             tdMinEditText.setText(incrementTimeChars, 0, QuickTimerString.PLACE_VALUES);
             tdSecEditText.setText(incrementTimeChars, QuickTimerString.PLACE_VALUES, QuickTimerString.PLACE_VALUES);
             // set repetitions
@@ -238,11 +257,6 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
         if (status == 0)
         {
             // no problems found with fields
-            //makeConstructiveLoadIntent();
-            // TODO: Saving Favourite to the TimeConfig was done in the old method that was used. As that method is now deleted, it no longer saves adjustments to favourites. Please fix.
-            //  You can see it here:
-            //        Switch favSwitch = (Switch) findViewById(R.id.save_fav_switch);
-            //        timeConfig.setFavorite(favSwitch.isChecked());
             startActivity(makeLoadConfigIntent(selectAction(true, position), position, timeConfig));
             finish();
         }
@@ -332,7 +346,8 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
         {
             //status |= bitFlagSetter;
             // if this one is all empty, it will default to zero
-            timeConfig.setTimerIncrement(0);
+            // TODO: set multi timer increments
+            timeConfig.setTimerIncrement(0, 0);
         }
         else
         {
@@ -358,7 +373,8 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
             }
             else
             {
-                timeConfig.setTimerIncrement(tdTime);
+                // TODO: set multi timer increments
+                timeConfig.setTimerIncrement(0, tdTime);
             }
         }
         bitFlagSetter = bitFlagSetter << 1;
@@ -459,7 +475,6 @@ public class SaveConfigActivity extends AppCompatActivity implements DeleteConfi
         if (clickedPositive)
         {
             Toast.makeText(SaveConfigActivity.this, "User clicked positive", Toast.LENGTH_LONG).show();
-            //makeDestructiveLoadIntent();
             startActivity(makeLoadConfigIntent(selectAction(false, position), position, timeConfig));
             finish();
         }

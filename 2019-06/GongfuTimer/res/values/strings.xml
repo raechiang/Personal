@@ -58,6 +58,11 @@
 
     <!--Settings keys-->
     <string name="restore_defaults_key">restore_defaults</string>
-    <string name="delete_defaults_key">delete_defaults</string>
+    <string name="remove_defaults_key">delete_defaults</string>
     <string name="delete_all_key">delete_all</string>
+
+    <string name="preference_file_key">com.rae.gongfutimer.PREFERENCE_FILE</string>
+    <string name="theme_selection_key">com.rae.gongfutimer.THEME_SELECTION</string>
+    <string name="dark_theme_name">DarkGreenTheme</string>
+    <string name="default_theme_name">AppTheme</string>
 </resources>

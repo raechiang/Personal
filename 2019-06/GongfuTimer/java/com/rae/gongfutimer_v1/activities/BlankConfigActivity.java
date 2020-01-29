@@ -182,7 +182,11 @@ public class BlankConfigActivity extends AppCompatActivity
         {
             Intent intent = new Intent(this, TimerActivity.class);
             long startTimerInSeconds = ((MinSecQuickTimerString) quickTimerValues[START_ID]).getSecondsLong();
+            // TODO: multiple increments
             long incrementTimeInSeconds = ((MinSecQuickTimerString) quickTimerValues[INCREMENT_ID]).getSecondsLong();
+            long[] incrementTimesInSecondsArray = new long[1];
+            incrementTimesInSecondsArray[0] = incrementTimeInSeconds;
+
             int totalInfusions = ((InfusionQuickTimerString) quickTimerValues[INFUSIONS_ID]).getInfusionsInt();
             //if (startTimerInSeconds > 0 && startTimerInSeconds < 6000 && totalInfusions > 0 && totalInfusions <= 99)
             if (checkRange(startTimerInSeconds, incrementTimeInSeconds, totalInfusions))
@@ -190,9 +194,12 @@ public class BlankConfigActivity extends AppCompatActivity
                 TimeConfig timer = new TimeConfig(UUID.randomUUID(),
                         "Unsaved Quick Timer",
                         startTimerInSeconds,
-                        incrementTimeInSeconds,
+                        //incrementTimeInSeconds,
+                        incrementTimesInSecondsArray,
+                        true,
                         totalInfusions,
                         "");
+                //(UUID id, String name, long initial, /*long increment,*/ long[] increments, boolean isLinear, /*int totalInfusions,*/ String notes)
                 intent.putExtra(getString(R.string.timer_extra), timer);
                 startActivity(intent);
             }

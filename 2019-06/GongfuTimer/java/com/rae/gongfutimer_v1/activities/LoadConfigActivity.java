@@ -2,6 +2,7 @@ package com.rae.gongfutimer_v1.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -39,16 +40,6 @@ import com.rae.gongfutimer_v1.utils.TimeConfigDataSet;
 
 public class LoadConfigActivity extends AppCompatActivity implements DeleteConfirmationDialogFragment.DeleteConfirmationDialogListener
 {
-    /*
-    0 | No action: NONE
-    1 | Add one config: ADD_ONE
-    2 | Restore default configs: RESTORE_DEFAULTS
-    3 | Edit one config at position: EDIT_ONE
-    4 | Delete one config at position: DELETE_ONE
-    5 | Remove default configs: REMOVE_DEFAULTS
-    6 | Delete all configs: DELETE_ALL
-     */
-
     /**
      * These fields correspond to the different actions that can be taken. They are to be used in
      * Intents that are passed to this Activity, especially those that may modify the data set of
@@ -109,6 +100,28 @@ public class LoadConfigActivity extends AppCompatActivity implements DeleteConfi
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        // TODO: this is only called when returning from SaveConfigActivity, so it never reads this part: You may
+        //  need to get here to switch themes, or find somewhere else to do it
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String themeName = sharedPreferences.getString(getString(R.string.theme_selection_key), null);
+        if (themeName != null)
+        {
+            Log.i("LOADCONFIGACTIVITY", "Theme is " + themeName);
+            if (themeName.equals(getString(R.string.default_theme_name)))
+            {
+                setTheme(R.style.AppTheme);
+            }
+            else if (themeName.equals(getString(R.string.dark_theme_name)))
+            {
+                setTheme(R.style.DarkGreenTheme);
+            }
+        }
+        else
+        {
+            Log.i("LOADCONFIGACTIVITY", "Theme is null");
+        }
+
         setContentView(R.layout.activity_load_config);
 
         // Set toolbar
