@@ -4,10 +4,6 @@
     <configs>
         <timer_config>
             <name>White</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>85</temperature_c>
-            <temperature_f>185</temperature_f>
-            <g_per_ml>3.5</g_per_ml>
             <timer_initial>20</timer_initial>
             <timer_increment>10</timer_increment>
             <repetitions>5</repetitions>
@@ -15,10 +11,6 @@
 
         <timer_config>
             <name>Green</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>80</temperature_c>
-            <temperature_f>175</temperature_f>
-            <g_per_ml>3</g_per_ml>
             <timer_initial>15</timer_initial>
             <timer_increment>3</timer_increment>
             <repetitions>5</repetitions>
@@ -26,10 +18,6 @@
 
         <timer_config>
             <name>Yellow</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>85</temperature_c>
-            <temperature_f>185</temperature_f>
-            <g_per_ml>3.5</g_per_ml>
             <timer_initial>15</timer_initial>
             <timer_increment>5</timer_increment>
             <repetitions>5</repetitions>
@@ -37,10 +25,6 @@
 
         <timer_config>
             <name>Oolong Strip</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>99</temperature_c>
-            <temperature_f>210</temperature_f>
-            <g_per_ml>4.5</g_per_ml>
             <timer_initial>20</timer_initial>
             <timer_increment>5</timer_increment>
             <repetitions>9</repetitions>
@@ -48,10 +32,6 @@
 
         <timer_config>
             <name>Oolong Ball</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>99</temperature_c>
-            <temperature_f>210</temperature_f>
-            <g_per_ml>6</g_per_ml>
             <timer_initial>25</timer_initial>
             <timer_increment>5</timer_increment>
             <repetitions>9</repetitions>
@@ -59,10 +39,6 @@
 
         <timer_config>
             <name>Black Small Leaf</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>90</temperature_c>
-            <temperature_f>195</temperature_f>
-            <g_per_ml>4.5</g_per_ml>
             <timer_initial>10</timer_initial>
             <timer_increment>5</timer_increment>
             <repetitions>8</repetitions>
@@ -70,10 +46,6 @@
 
         <timer_config>
             <name>Black Large Leaf</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>95</temperature_c>
-            <temperature_f>205</temperature_f>
-            <g_per_ml>4</g_per_ml>
             <timer_initial>15</timer_initial>
             <timer_increment>5</timer_increment>
             <repetitions>8</repetitions>
@@ -81,10 +53,6 @@
 
         <timer_config>
             <name>PuErh Raw</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>95</temperature_c>
-            <temperature_f>205</temperature_f>
-            <g_per_ml>5</g_per_ml>
             <timer_initial>10</timer_initial>
             <timer_increment>3</timer_increment>
             <repetitions>15</repetitions>
@@ -92,10 +60,6 @@
 
         <timer_config>
             <name>PuErh Ripe</name>
-            <brew_style>Gong Fu</brew_style>
-            <temperature_c>99</temperature_c>
-            <temperature_f>210</temperature_f>
-            <g_per_ml>5</g_per_ml>
             <timer_initial>10</timer_initial>
             <timer_increment>5</timer_increment>
             <repetitions>20</repetitions>

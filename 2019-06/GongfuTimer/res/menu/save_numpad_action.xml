@@ -2,8 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/saveOrEdit"
-        android:icon="@drawable/ic_edit_black_24dp"
-        android:title="@string/actions_modify_timer"
+        android:id="@+id/save_numpad_apply_action"
+        android:title="@string/action_apply_timer"
         app:showAsAction="ifRoom" />
 </menu>

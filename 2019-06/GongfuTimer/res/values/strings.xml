@@ -1,68 +1,48 @@
 <resources>
-    <!-- General -->
-    <string name="app_name">Gongfu Timer (v1)</string>
+    <!-- Names (General) -->
+    <string name="app_name">Gongfu Timer (v2)</string>
     <string name="file_name">file.ser</string>
     <string name="action_settings">Settings</string>
-    <string name="actions_modify">Save or Edit</string>
-    <string name="placeholder">(Placeholder)</string>
-    <!-- Buttons -->
-    <string name="button_clear">CLR</string>
-    <string name="go_button">Go</string>
-    <string name="save_new_config_button">Save</string>
-    <string name="delete_button">Delete</string>
-    <string name="fav_switch_button">Favorite</string>
-    <string name="back_button">Back</string>
-    <string name="next_button">Next</string>
-    <string name="start_button">Start</string>
-    <string name="show_more_button">Show extra fields</string>
-    <string name="hide_more_button">Hide extra fields</string>
-    <string name="edit_button">Edit</string>
-    <string name="show_notes">Show Notes</string>
-    <string name="hide_notes">Hide Notes</string>
-    <!-- Timer Info -->
-    <string name="text_startTime">Start Timer</string>
-    <string name="text_incrementalTime">Increment</string>
-    <string name="text_total_infusions">Total Infusions</string>
-    <string name="text_repetitions">Repetitions</string>
-    <string name="text_unit_minutes">m</string>
-    <string name="text_unit_seconds">s</string>
-    <string name="text_initial_zeroes">00</string>
-    <string name="text_plus">+</string>
-    <string name="text_mult">×</string>
-    <string name="text_name">Name</string>
-    <string name="text_your_name">My Timer Name</string>
+    <string name="actions_modify_timer">Save or Edit</string>
+    <string name="action_apply_timer">Apply</string>
+
+    <!-- Text (General) -->
     <string name="text_empty_list">There are no saved timer configurations.</string>
-    <string name="text_extra_notes">Notes:</string>
-    <string name="text_no_notes">No notes found!</string>
-    <!-- Radio Groups -->
-    <string name="animation_radio_group">Animation</string>
-    <string name="color_radio_group">Color Type</string>
-    <string name="sound_radio_group">Sound</string>
+    <string name="text_your_timer_name">Your Timer</string>
+    <string name="text_colon">:</string>
+    <string name="text_forward_slash">/</string>
+    <string name="text_min_m">m</string>
+    <string name="text_sec_s">s</string>
+
+    <!-- Buttons -->
+    <string name="load_menu_edit_button">Edit</string>
+    <string name="load_menu_delete_button">Delete</string>
+    <string name="save_numpad_clear_button">CLR</string>
+
     <!-- Deletion Text -->
     <string name="delete_confirmation_dialog">Permanently delete timer?</string>
     <string name="delete_config">Delete</string>
     <string name="delete_cancel">Cancel</string>
 
-    <!-- Extra keys -->
-    <string name="t0_time_extra">com.rae.gongfutimer_v1.t0TIME</string>
-    <string name="td_time_extra">com.rae.gongfutimer_v1.tdTIME</string>
-    <string name="r_value_extra">com.rae.gongfutimer_v1.rVALUE</string>
-    <string name="name_extra">com.rae.gongfutimer_v1.nameSTRING</string>
-    <string name="timer_extra">com.rae.gongfutimer_v1.TIMER</string>
-    <string name="position_extra">com.rae.gongfutimer_v1.POSITION</string>
-    <string name="load_action_extra">com.rae.gongfutimer_v1.ACTION</string>
+    <!-- Unsaved Timer Text -->
+    <string name="run_unsaved_dialog">Begin timer without saving?</string>
+    <string name="run_unsaved_positive">Confirm</string>
+    <string name="run_unsaved_cancel">Cancel</string>
+    <string name="return_unsaved_dialog">Return without saving?</string>
 
-    <string name="blank_start_key">com.rae.gongfutimer_v1.startSTRING</string>
-    <string name="blank_increment_key">com.rae.gongfutimer_v1.incrementSTRING</string>
-    <string name="blank_infusions_key">com.rae.gongfutimer_v1.infusionsSTRING</string>
+    <!-- Extra Keys -->
+    <string name="load_action_extra">com.rae.gongfutimer_v2.LOAD_ACTION</string>
+    <string name="load_position_extra">com.rae.gongfutimer_v2.LOAD_POSITION</string>
+    <string name="load_timer_extra">com.rae.gongfutimer_v2.LOAD_TIMER</string>
 
-    <!--Settings keys-->
-    <string name="restore_defaults_key">restore_defaults</string>
-    <string name="remove_defaults_key">delete_defaults</string>
-    <string name="delete_all_key">delete_all</string>
+    <!-- Bundle Keys -->
+    <string name="save_numpad_timer_key">com.rae.gongfutimer_v2.NUMPAD_TIMER</string>
+    <string name="save_numpad_position_key">com.rae.gongfutimer_v2.NUMPAD_POSITION</string>
+    <string name="unsaved_string_id_key">com.rae.gongfutimer_v2.UNSAVED_STRING_ID</string>
 
-    <string name="preference_file_key">com.rae.gongfutimer.PREFERENCE_FILE</string>
-    <string name="theme_selection_key">com.rae.gongfutimer.THEME_SELECTION</string>
-    <string name="dark_theme_name">DarkGreenTheme</string>
-    <string name="default_theme_name">AppTheme</string>
+    <!-- Settings/Preference Keys -->
+    <string name="settings_feedback_key">com.rae.gongfutimer_v2.FEEDBACK</string>
+    <string name="settings_restore_defaults_key">com.rae.gongfutimer_v2.RESTORE_DEFAULTS</string>
+    <string name="settings_remove_defaults_key">com.rae.gongfutimer_v2.REMOVE_DEFAULTS</string>
+    <string name="settings_delete_all_key">com.raea.gongfutimer_v2.DELETE_ALL</string>
 </resources>

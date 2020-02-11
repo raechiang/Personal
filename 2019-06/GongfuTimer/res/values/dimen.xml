@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="padding_24">24dp</dimen>
     <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
 
     <dimen name="text_size_large_button">36sp</dimen>
 
@@ -9,4 +11,7 @@
     <dimen name="text_size_med_display">24sp</dimen>
     <dimen name="text_size_small_display">20sp</dimen>
     <dimen name="text_size_smaller_display">16sp</dimen>
+
+    <dimen name="button_icon_size">56dp</dimen>
+    <dimen name="button_smaller_size">42dp</dimen>
 </resources>

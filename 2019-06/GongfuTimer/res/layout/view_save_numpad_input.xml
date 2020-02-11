@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:id="@+id/save_numpad_123_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum=".9"
+        android:layout_alignParentTop="true">
+        <Button
+            android:id="@+id/save_numpad_n1_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <Button
+            android:id="@+id/save_numpad_n2_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <Button
+            android:id="@+id/save_numpad_n3_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/save_numpad_456_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum=".9"
+        android:layout_below="@id/save_numpad_123_row">
+        <Button
+            android:id="@+id/save_numpad_n4_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <Button
+            android:id="@+id/save_numpad_n5_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <Button
+            android:id="@+id/save_numpad_n6_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/save_numpad_789_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum=".9"
+        android:layout_below="@id/save_numpad_456_row">
+        <Button
+            android:id="@+id/save_numpad_n7_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <Button
+            android:id="@+id/save_numpad_n8_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <Button
+            android:id="@+id/save_numpad_n9_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/save_numpad_c0b_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum=".9"
+        android:layout_below="@id/save_numpad_789_row">
+        <Button
+            android:id="@+id/save_numpad_clear_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:text="@string/save_numpad_clear_button"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <Button
+            android:id="@+id/save_numpad_n0_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:textSize="@dimen/text_size_large_button"
+            style="?android:attr/borderlessButtonStyle" />
+        <ImageButton
+            android:id="@+id/save_numpad_backspace_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            app:srcCompat="@drawable/ic_backspace_black_24dp"
+            style="?android:attr/borderlessButtonStyle" />
+    </LinearLayout>
+</RelativeLayout>
