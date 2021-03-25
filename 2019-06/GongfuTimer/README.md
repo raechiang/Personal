@@ -9,13 +9,19 @@
 
 <p>Upon opening the app for the first time, a list of pre-made "default" timers will be displayed. These can be deleted or restored via the Settings button in the upper right-hand corner of the list screen. Each element of the list can be clicked on to start the timer, or it can be long-held to edit the timer. The vertical More dots in each row will open a drop-down menu, which allows you to Edit or Delete that configuration.</p>
 
-<img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss00_load.png" width="400">
+<figure>
+  <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss00_load.png" width="400">
+  <figcaption><p>(The list of timer configurations. Dark theme.)</p></figcaption>
+</figure>
 
 ### Running Timers
 
 <p>If you click on a timer from the load screen, it will bring you to a screen where you can run the timer. Below is an example of one of the default timers: Black Large Leaf. The lower right-hand button is for Go/Pause, and the lower left-hand button is for Restarting the current step or moving to the next step if you are at 0 seconds remaining. The `<` and `>` buttons near the center can control the step number that you are on, which is helpful if, say, you accidentally terminate the app or come back later, or maybe you want to skip around for whatever reason. The Pencil button in the upper right-hand corner can be used to Edit the timer.</p>
 
-<img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss09_run_timer.png" width="400">
+<figure>
+  <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss09_run_timer.png" width="400">
+  <figcaption><p>(Running the Black Large Leaf timer. Clay theme.)</p></figcaption>
+</figure>
 
 ### Editing Timers
 
@@ -70,3 +76,11 @@
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss07_save_existing_unsaved.png" width="400">
   <figcaption><p>(Deleting all timers, which opens a confirmation dialog. Dark theme.)</p></figcaption>
 </figure>
+
+## Known Issues & Further Development
+
+<p>Some basic functions still need to be implemented: alarms for the completion of a timer and the feedback button.</p>
+
+<p>Visuals/design could also benefit from some uplifts.</p>
+
+<p>There is an issue with the hex input when changing the icon style.</p>
