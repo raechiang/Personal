@@ -1,6 +1,7 @@
 # Gongfu Timer (WIP)
 <p>This is a timer app that has the ability to store many configurations of potentially multi-step timers with some visual customization. The app is not complete, but it is useable; mainly the design/visual parts that remain unfinished.</p>
 <p>This timer is originally made for tea-making, in the eastern style of *gongfu*, which involves frequent and short steeps with high leaf-to-water ratios in small vessels. Later steeps are done over longer durations. If you are into tea-brewing, you probably also have a large arsenal of different leaves, so this app also saves multiple custom timer configurations, which is more convenient than memorizing all of the unique timings that every different batch of leaves deserves. This version of the tea timer allows control over the exact timer for every infusion step. Since each timer step can be manually set and is not restricted to linearly increasing an initial timer, you can vary the differential of each step, thereby expanding its use to more than just gongfu brewing. I use it for cleaning tools, for example, but you can use it for drip-brew coffee or HIIT--you can use it for anything that can make use of a short interval timer.</p>
+
 ## Using This App
 <p>Upon opening the app for the first time, a list of pre-made "default" timers will be displayed. These can be deleted or restored via the Settings button in the upper right-hand corner of the list screen. Each element of the list can be clicked on to start the timer, or it can be long-held to edit the timer. The vertical More dots in each row will open a drop-down menu, which allows you to Edit or Delete that configuration.</p>
 
@@ -14,15 +15,15 @@
 
 <figure>
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss02_save_new.png" width="500">
-  <figcaption>(Making a new "blank" unsaved timer. Dark theme.)</figcaption>
+  <figcaption><p>(Making a new "blank" unsaved timer. Dark theme.)</p></figcaption>
 </figure>
 
 <p>From the list screen, if you long-hold a timer or select Edit from the view More vertical buttons, you will be able to edit the timer.</p>
 
-<figure>
+<p><figure>
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss01_save_existing.png" width="500">
   <figcaption>(Editing an existing timer. Clay theme.)</figcaption>
-</figure>
+</figure></p>
 
 <p>All fields have default values as you can see. You can change the name of a timer by entering text where "Unnamed Timer" is. The icon's style and color can be changed by clicking the icon just below the name. The timer configuration can be marked as a Favorite timer by clicking the star to the right of the icon selection button, which will cause the timer configuration to sort to the top of the list. The values of a timer step can be modified by 1 second by using the `-` or `+` buttons surrounding the timer value, or it can be changed by opening a number pad dialog box by clicking the timer step's text (so, in the image depicted below, by clicking on the "00:01" text). The large `+` button at the bottom of the screen will add another step to the timer, which will automatically increment by some default amount that can be adjusted in the Settings. The lower left contains two Floating Action Buttons: a save button and a delete button (the latter of which is hidden if the timer does not exist in your saved configuration database). The lower right corner contains a Floating Action Button that runs this timer. As far as errors the user can cause, the only thing that they need to worry about is using a non-empty Name for the timer.</p>
 
