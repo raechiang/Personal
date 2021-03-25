@@ -4,5 +4,21 @@
         <attr name="valueMin" format="integer" />
         <attr name="valueSec" format="integer" />
         <attr name="timerTextSize" format="integer" />
+        <attr name="timerTextColor" format="color" />
     </declare-styleable>
+
+    <attr name="windowBackgroundColor" format="reference" />
+    <attr name="toolbarColor" format="reference" />
+    <attr name="textAppNameColor" format="reference" />
+    <attr name="textPrimaryColor" format="reference" />
+    <attr name="textSecondaryColor" format="reference" />
+    <attr name="buttonPrimaryColor" format="reference" />
+    <attr name="buttonSecondaryColor" format="reference" />
+    <attr name="buttonSmallColor" format="reference" />
+    <attr name="buttonMainToolbarColor" format="reference" />
+    <attr name="sharedTertiaryColor" format="reference" />
+    <attr name="buttonFavColor" format="reference" />
+
+    <attr name="customThemeToolbarStyle" format="reference" />
+    <attr name="sharedCustomTheme" format="reference" />
 </resources>

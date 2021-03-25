@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SaveConfigActivity">
+    tools:context=".activities.SaveConfigActivity" >
 
     <include
         android:id="@+id/toolbar_main"
@@ -14,39 +14,60 @@
 
     <EditText
         android:id="@+id/save_name_edit_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginLeft="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:layout_marginRight="@dimen/padding_16"
         android:hint="@string/text_your_timer_name"
-        android:inputType="textPersonName|textCapWords"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:textSize="@dimen/text_size_large_display"
-        app:layout_constraintEnd_toEndOf="@id/save_favorite_button"
+        android:inputType="textPersonName|textCapWords|textMultiLine"
+        android:maxLength="16"
+        android:textSize="@dimen/text_size_med_large_display"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/save_favorite_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_main" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/save_icon_image_view"
+        android:layout_width="@dimen/button_icon_size"
+        android:layout_height="@dimen/button_icon_size"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginLeft="@dimen/padding_16"
+        android:layout_marginStart="@dimen/padding_16"
+        app:layout_constraintTop_toBottomOf="@id/save_name_edit_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/save_favorite_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/padding_16"
-        android:layout_marginRight="@dimen/padding_16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_main"
-        app:srcCompat="@drawable/ic_star_border_black_24dp" />
+        android:layout_width="@dimen/button_icon_size"
+        android:layout_height="@dimen/button_icon_size"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginLeft="@dimen/padding_8"
+        android:layout_marginStart="@dimen/padding_8"
+        app:layout_constraintTop_toBottomOf="@id/save_name_edit_text"
+        app:layout_constraintLeft_toRightOf="@id/save_icon_image_view"
+        app:layout_constraintStart_toEndOf="@id/save_icon_image_view"
+        app:srcCompat="@drawable/ic_star_border_black_24dp"
+        style="?attr/borderlessButtonStyle"
+        android:tint="?attr/buttonFavColor" />
 
     <include
         layout="@layout/save_content_timer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginBottom="@dimen/padding_16"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@id/save_add_new_timer_row_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/save_name_edit_text" />
+        app:layout_constraintTop_toBottomOf="@id/save_icon_image_view" />
 
     <ImageButton
         android:id="@+id/save_add_new_timer_row_button"
@@ -57,7 +78,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_add_black_24dp" />
+        app:srcCompat="@drawable/ic_add_black_24dp"
+        android:background="@drawable/round_rect_button_background"
+        android:tint="?attr/buttonPrimaryColor" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/save_save_config_floating_action_button"
@@ -69,7 +92,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_save_black_24dp" />
+        app:srcCompat="@drawable/ic_save_black_24dp"
+        app:backgroundTint="?attr/buttonPrimaryColor"
+        android:tint="?attr/buttonSecondaryColor" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/save_delete_config_floating_action_button"
@@ -81,7 +106,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/save_save_config_floating_action_button"
         app:layout_constraintStart_toEndOf="@id/save_save_config_floating_action_button"
-        app:srcCompat="@drawable/ic_delete_black_24dp" />
+        app:srcCompat="@drawable/ic_delete_black_24dp"
+        app:backgroundTint="?attr/buttonPrimaryColor"
+        android:tint="?attr/buttonSecondaryColor" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/save_start_unsaved_config_floating_action_button"
@@ -92,6 +119,8 @@
         android:layout_marginBottom="@dimen/padding_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_timer_black_24dp" />
+        app:srcCompat="@drawable/ic_timer_black_24dp"
+        app:backgroundTint="?attr/buttonPrimaryColor"
+        android:tint="?attr/buttonSecondaryColor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

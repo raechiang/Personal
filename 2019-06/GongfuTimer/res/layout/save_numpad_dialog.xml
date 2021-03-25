@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="?attr/windowBackgroundColor" >
 
     <include
         layout="@layout/toolbar_main"
@@ -69,6 +70,20 @@
         app:layout_constraintHorizontal_bias="0.5"
         android:text="@string/text_sec_s"
         android:textSize="@dimen/text_size_med_display" />
+
+    <ImageView
+        android:id="@+id/save_numpad_timer_error_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/save_numpad_timer_sec_unit_text_view"
+        app:layout_constraintStart_toEndOf="@id/save_numpad_timer_sec_unit_text_view"
+        app:layout_constraintTop_toTopOf="@id/save_numpad_timer_min_text_view"
+        app:layout_constraintBottom_toBottomOf="@id/save_numpad_timer_min_text_view"
+        app:srcCompat="@drawable/ic_error_outline_black_24dp"
+        android:visibility="invisible"
+        android:tint="@color/colorButtonErrorRed" />
 
     <com.rae.gongfutimer_v2.ui.SaveNumpadInputView
         android:id="@+id/save_numpad_input_view"

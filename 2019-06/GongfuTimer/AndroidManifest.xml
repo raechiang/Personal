@@ -4,9 +4,9 @@
   <application
     android:allowBackup="true"
       android:label="@string/app_name"
-    android:icon="@drawable/ic_gongfutimer01"
+    android:icon="@drawable/ic_gongfutimerlogo02_greenshadecircbg_white"
     android:supportsRtl="true"
-    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    android:theme="@style/DarkTheme">
     <activity android:name=".activities.LoadConfigActivity"
       android:launchMode="singleTask">
       <intent-filter>

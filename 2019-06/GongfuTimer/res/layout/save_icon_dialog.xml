@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/windowBackgroundColor">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:elevation="0dp"/>
+
+    <FrameLayout
+        android:id="@+id/save_icon_dialog_icon1_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_8"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/save_icon_dialog_icon2_layout"
+        app:layout_constraintEnd_toStartOf="@id/save_icon_dialog_icon2_layout"
+        app:layout_constraintHorizontal_bias="0.5">
+        <ImageView
+            android:layout_width="@dimen/big_icon_size"
+            android:layout_height="@dimen/big_icon_size"
+            app:srcCompat="@drawable/rect_icon_select_background" />
+        <ImageView
+            android:id="@+id/save_icon_dialog_icon1_image_view"
+            android:layout_width="@dimen/big_icon_size"
+            android:layout_height="@dimen/big_icon_size"
+            app:srcCompat="@drawable/ic_gongfutimerlogo01" />
+        <ImageView
+            android:id="@+id/save_icon_dialog_icon1_select_view"
+            android:layout_width="@dimen/big_icon_size"
+            android:layout_height="@dimen/big_icon_size"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/save_icon_dialog_icon2_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_8"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main"
+        app:layout_constraintLeft_toRightOf="@id/save_icon_dialog_icon1_layout"
+        app:layout_constraintStart_toEndOf="@id/save_icon_dialog_icon1_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+        <ImageView
+            android:layout_width="@dimen/big_icon_size"
+            android:layout_height="@dimen/big_icon_size"
+            app:srcCompat="@drawable/rect_icon_select_background"/>
+        <ImageView
+            android:id="@+id/save_icon_dialog_icon2_image_view"
+            android:layout_width="@dimen/big_icon_size"
+            android:layout_height="@dimen/big_icon_size"
+            app:srcCompat="@drawable/ic_timer_plain"/>
+        <ImageView
+            android:id="@+id/save_icon_dialog_icon2_select_view"
+            android:layout_width="@dimen/big_icon_size"
+            android:layout_height="@dimen/big_icon_size"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/save_icon_dialog_dull_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/save_icon_dialog_icon1_layout"/>
+
+    <LinearLayout
+        android:id="@+id/save_icon_dialog_pale_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginBottom="@dimen/padding_16"
+        app:layout_constraintTop_toBottomOf="@id/save_icon_dialog_dull_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/save_icon_hex_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginBottom="@dimen/padding_16"
+        android:layout_marginLeft="@dimen/padding_16"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginRight="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_16"
+        app:layout_constraintTop_toBottomOf="@id/save_icon_dialog_pale_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+        <ImageView
+            android:id="@+id/save_icon_dialog_hex_input_preview_image_view"
+            android:layout_width="@dimen/button_smaller_size"
+            android:layout_height="@dimen/button_smaller_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/palette_circle" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_16"
+            android:layout_marginStart="@dimen/padding_16"
+            app:layout_constraintTop_toTopOf="@id/save_icon_dialog_hex_input_preview_image_view"
+            app:layout_constraintBottom_toBottomOf="@id/save_icon_dialog_hex_input_preview_image_view"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintLeft_toRightOf="@id/save_icon_dialog_hex_input_preview_image_view"
+            app:layout_constraintStart_toEndOf="@id/save_icon_dialog_hex_input_preview_image_view"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Manual Hex Input:"
+            android:textSize="@dimen/text_size_small_display" />
+        <EditText
+            android:id="@+id/save_icon_dialog_hex_input_edit_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_8"
+            app:layout_constraintTop_toBottomOf="@id/save_icon_dialog_hex_input_preview_image_view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:maxEms="6"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:hint="@string/text_hex_zero"
+            android:textSize="@dimen/text_size_small_display" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

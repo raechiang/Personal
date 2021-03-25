@@ -7,11 +7,11 @@
     tools:context="com.rae.gongfutimer_v2.activities.LoadConfigActivity"
     tools:showIn="@layout/activity_load_config" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/load_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        />
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/load_recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:scrollbars="vertical"
+      />
 
 </RelativeLayout>

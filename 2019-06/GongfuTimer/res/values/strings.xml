@@ -13,6 +13,8 @@
     <string name="text_forward_slash">/</string>
     <string name="text_min_m">m</string>
     <string name="text_sec_s">s</string>
+    <string name="text_numpad_range_timer_error">Timer must be greater than 0 seconds and less than 99 minutes and 60 seconds.</string>
+    <string name="text_hex_zero">000000</string>
 
     <!-- Buttons -->
     <string name="load_menu_edit_button">Edit</string>
@@ -39,10 +41,24 @@
     <string name="save_numpad_timer_key">com.rae.gongfutimer_v2.NUMPAD_TIMER</string>
     <string name="save_numpad_position_key">com.rae.gongfutimer_v2.NUMPAD_POSITION</string>
     <string name="unsaved_string_id_key">com.rae.gongfutimer_v2.UNSAVED_STRING_ID</string>
+    <string name="save_icon_color_key">com.rae.gongfutimer_v2.ICON_COLOR</string>
+    <string name="save_icon_name_key">com.rae.gongfutimer_v2.ICON_NAME</string>
 
     <!-- Settings/Preference Keys -->
     <string name="settings_feedback_key">com.rae.gongfutimer_v2.FEEDBACK</string>
     <string name="settings_restore_defaults_key">com.rae.gongfutimer_v2.RESTORE_DEFAULTS</string>
     <string name="settings_remove_defaults_key">com.rae.gongfutimer_v2.REMOVE_DEFAULTS</string>
-    <string name="settings_delete_all_key">com.raea.gongfutimer_v2.DELETE_ALL</string>
+    <string name="settings_delete_all_key">com.rae.gongfutimer_v2.DELETE_ALL</string>
+    <string name="settings_theme_list_key">com.rae.gongfutimer_v2.THEMES</string>
+    <string name="preference_file_key">com.rae.gongfutimer_v2.PREFERENCE_FILE</string>
+    <string name="settings_default_increment_key">com.rae.gongfutimer_v2.DEFAULT_INCREMENT</string>
+    <string name="default_increment_seconds">5</string>
+    <string name="settings_hex_input_key">com.rae.gongfutimer_v2.HEX_INPUT</string>
+    <!-- Settings/Preference Strings -->
+    <string name="pref_theme_label_dark">Dark</string>
+    <string name="pref_theme_label_light">Light</string>
+    <string name="pref_theme_label_clay">Clay</string>
+    <string name="pref_theme_value_dark">DarkTheme</string>
+    <string name="pref_theme_value_light">LightTheme</string>
+    <string name="pref_theme_value_clay">ClayTheme</string>
 </resources>

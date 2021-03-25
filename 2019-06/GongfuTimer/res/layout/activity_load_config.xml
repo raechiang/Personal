@@ -11,44 +11,46 @@
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar_main"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        />
+        android:layout_height="?attr/actionBarSize" />
 
     <include
         layout="@layout/load_content_config"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_8"
         app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
-        />
+        app:layout_constraintBottom_toTopOf="@id/load_make_new_floating_action_button"/>
 
     <TextView
         android:id="@+id/load_empty_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/padding_8"
+        app:layout_constraintBottom_toTopOf="@id/load_make_new_floating_action_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
         android:text="@string/text_empty_list"
         android:textSize="@dimen/text_size_med_display"
         android:gravity="center"
-        />
+        android:textColor="?attr/textPrimaryColor" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/load_make_new_floating_action_button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginStart="@dimen/padding_16"
-        android:layout_marginLeft="@dimen/padding_16"
         android:layout_marginBottom="@dimen/padding_16"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_add_black_24dp" />
+        app:srcCompat="@drawable/ic_add_black_24dp"
+        app:backgroundTint="?attr/buttonPrimaryColor"
+        android:tint="?attr/buttonSecondaryColor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

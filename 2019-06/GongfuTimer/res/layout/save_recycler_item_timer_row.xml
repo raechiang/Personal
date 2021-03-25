@@ -27,7 +27,9 @@
             android:layout_marginTop="@dimen/padding_16"
             android:layout_marginBottom="@dimen/padding_16"
             android:text="1"
-            android:textSize="@dimen/text_size_large_display" />
+            android:textSize="@dimen/text_size_med_large_display"
+            android:textColor="?attr/textSecondaryColor"
+            android:minEms="2" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,9 +47,12 @@
                 android:id="@+id/save_timer_decrement_image_button"
                 android:layout_width="@dimen/button_smaller_size"
                 android:layout_height="@dimen/button_smaller_size"
+                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                app:srcCompat="@drawable/ic_remove_black_24dp"/>
+                app:srcCompat="@drawable/ic_remove_black_24dp"
+                android:tint="?attr/buttonSmallColor"
+                android:background="@drawable/round_rect_button_border" />
             <com.rae.gongfutimer_v2.ui.TimerView
                 android:id="@+id/save_timer_min_sec_timer_view"
                 android:layout_width="match_parent"
@@ -59,14 +64,18 @@
                 android:layout_toStartOf="@id/save_timer_increment_image_button"
                 app:timerTextSize="32"
                 app:valueMin="00"
-                app:valueSec="00" />
+                app:valueSec="00"
+                app:timerTextColor="?attr/sharedTertiaryColor"/>
             <ImageButton
                 android:id="@+id/save_timer_increment_image_button"
                 android:layout_width="@dimen/button_smaller_size"
                 android:layout_height="@dimen/button_smaller_size"
+                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                app:srcCompat="@drawable/ic_add_black_24dp" />
+                app:srcCompat="@drawable/ic_add_black_24dp"
+                android:tint="?attr/buttonSmallColor"
+                android:background="@drawable/round_rect_button_border" />
         </RelativeLayout>
         <ImageButton
             android:id="@+id/save_recycler_timer_row_remove_button"
@@ -80,6 +89,7 @@
             android:layout_marginEnd="@dimen/padding_16"
             android:visibility="visible"
             style="?android:attr/borderlessButtonStyle"
-            app:srcCompat="@drawable/ic_close_black_24dp" />
+            app:srcCompat="@drawable/ic_close_black_24dp"
+            android:tint="?attr/buttonSecondaryColor" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

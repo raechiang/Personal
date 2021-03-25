@@ -1,33 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.preference.PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.preference.PreferenceCategory
-        android:title="General">
-        <androidx.preference.Preference
-            android:key="@string/settings_feedback_key"
-            android:title="Send Feedback"
-            android:summary="Report technical issues or suggest new features." />
-    </androidx.preference.PreferenceCategory>
+  <androidx.preference.PreferenceCategory
+      android:title="General">
+    <androidx.preference.EditTextPreference
+        android:key="@string/settings_default_increment_key"
+        android:defaultValue="@string/default_increment_seconds"
+        android:title="Default Timer Increment Amount"/>
+    <androidx.preference.ListPreference
+        android:key="@string/settings_theme_list_key"
+        android:defaultValue="pref_theme_value_dark"
+        android:title="Change Theme"
+        android:entries="@array/pref_theme_option_entries"
+        android:entryValues="@array/pref_theme_option_entry_values"/>
+    <androidx.preference.SwitchPreference
+        android:key="@string/settings_hex_input_key"
+        android:defaultValue="false"
+        android:title="Hex Color Input"
+        android:summary="Allow hex value input for icon colors"/>
+    <androidx.preference.Preference
+        android:key="@string/settings_feedback_key"
+        android:title="Send Feedback"
+        android:summary="Report technical issues or suggest new features."/>
+  </androidx.preference.PreferenceCategory>
 
-    <androidx.preference.PreferenceCategory
-        android:title="Saved Timer Configurations">
-        <androidx.preference.Preference
-            android:key="@string/settings_restore_defaults_key"
-            android:title="Restore Default Timers"
-            android:summary="Restore original timers to saved timers" />
-        <androidx.preference.Preference
-            android:key="@string/settings_remove_defaults_key"
-            android:title="Remove Default Timers"
-            android:summary="Remove original timers from saved timers" />
-        <com.rae.gongfutimer_v2.preferences.DeleteDialogPreference
-            android:key="@string/settings_delete_all_key"
-            android:title="Delete All Timers"
-            android:summary="Delete all timers from saved timers"
-            android:dialogTitle=""
-            android:dialogMessage="Permanently delete all timers?"
-            android:positiveButtonText="Confirm"
-            android:negativeButtonText="Cancel" />
-    </androidx.preference.PreferenceCategory>
+  <androidx.preference.PreferenceCategory
+      android:title="Saved Timer Configurations">
+    <androidx.preference.Preference
+        android:key="@string/settings_restore_defaults_key"
+        android:title="Restore Default Timers"
+        android:summary="Restore original timers to saved timers" />
+    <androidx.preference.Preference
+        android:key="@string/settings_remove_defaults_key"
+        android:title="Remove Default Timers"
+        android:summary="Remove original timers from saved timers" />
+    <com.rae.gongfutimer_v2.preferences.DeleteDialogPreference
+        android:key="@string/settings_delete_all_key"
+        android:title="Delete All Timers"
+        android:summary="Delete all timers from saved timers"
+        android:dialogTitle=""
+        android:dialogMessage="Permanently delete all timers?"
+        android:positiveButtonText="Confirm"
+        android:negativeButtonText="Cancel" />
+  </androidx.preference.PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

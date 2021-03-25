@@ -5,4 +5,50 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="colorGreenTest">#00712A</color>
+
+    <!-- button colors -->
+    <color name="colorButtonLightGreen">#50AD14</color>
+    <color name="colorButtonDarkGreen">#0A3805</color>
+    <color name="colorButtonRed">#8E2809</color>
+    <color name="colorButtonGold">#DD9900</color>
+    <color name="colorButtonErrorRed">#CC0000</color>
+
+    <!-- dark theme colors -->
+    <color name="colorDarkBG">#191919</color>
+    <color name="colorDarkToolbar">#0C3305</color>
+    <color name="colorDarkText">#CCCCCC</color>
+    <color name="colorDarkTextSecondary">#B2B2B2</color>
+    <color name="colorDarkSharedTertiary">#8BCC8B</color>
+
+    <!-- light theme colors -->
+    <color name="colorLightBG">#DBDBDB</color>
+    <color name="colorLightToolbar">#44D122</color>
+    <color name="colorLightText">#000000</color>
+    <color name="colorLightTextSecondary">#515151</color>
+    <color name="colorLightSharedTertiary">#1A4F1A</color>
+
+    <!-- clay theme color -->
+    <color name="colorClayBG">#CCC2BA</color>
+
+    <!-- icon colors -->
+    <!-- darks -->
+    <color name="colorDullRedIcon">#7F0B0B</color>
+    <color name="colorDullYellowIcon">#CC993E</color>
+    <color name="colorDullTeaGreenIcon">#476308</color>
+    <color name="colorDullGreenIcon">#427C29</color>
+    <color name="colorDullBlueIcon">#355E8E</color>
+    <color name="colorDullPurpleIcon">#504051</color>
+    <color name="colorDullPinkIcon">#774F75</color>
+    <color name="colorDullBrownIcon">#6B5B51</color>
+    <color name="colorDullGreyIcon">#606060</color>
+    <!-- lights -->
+    <color name="colorPaleRedIcon">#A83327</color>
+    <color name="colorPaleYellowIcon">#D8CA73</color>
+    <color name="colorPaleTeaGreenIcon">#869156</color>
+    <color name="colorPaleGreenIcon">#86A07C</color>
+    <color name="colorPaleBlueIcon">#79A6C9</color>
+    <color name="colorPalePurpleIcon">#B798D8</color>
+    <color name="colorPalePinkIcon">#F291E5</color>
+    <color name="colorPaleBrownIcon">#A0948D</color>
+    <color name="colorPaleGreyIcon">#AFAFAF</color>
 </resources>

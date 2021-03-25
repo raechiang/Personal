@@ -1,11 +1,98 @@
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Base -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Custom Dark -->
+    <style name="DarkTheme" parent="Custom">
+        <item name="sharedCustomTheme">@style/Custom</item>
+        <item name="windowBackgroundColor">@color/colorDarkBG</item>
+        <item name="toolbarColor">@color/colorDarkToolbar</item>
+        <item name="textAppNameColor">@color/colorDarkText</item>
+        <item name="textPrimaryColor">@color/colorDarkText</item>
+        <item name="textSecondaryColor">@color/colorDarkTextSecondary</item>
+        <item name="buttonPrimaryColor">@color/colorButtonLightGreen</item>
+        <item name="buttonSecondaryColor">@color/colorButtonDarkGreen</item>
+        <item name="buttonMainToolbarColor">@color/colorButtonLightGreen</item>
+        <item name="sharedTertiaryColor">@color/colorDarkSharedTertiary</item>
+        <item name="customThemeToolbarStyle">@style/CustomToolbarStyle</item>
+    </style>
+
+    <!-- Custom Light -->
+    <style name="LightTheme" parent="Custom">
+        <item name="sharedCustomTheme">@style/Custom</item>
+        <item name="windowBackgroundColor">@color/colorLightBG</item>
+        <item name="toolbarColor">@color/colorLightToolbar</item>
+        <item name="textAppNameColor">@color/colorLightText</item>
+        <item name="textPrimaryColor">@color/colorLightText</item>
+        <item name="textSecondaryColor">@color/colorLightTextSecondary</item>
+        <item name="buttonPrimaryColor">@color/colorButtonDarkGreen</item>
+        <item name="buttonSecondaryColor">@color/colorButtonLightGreen</item>
+        <item name="buttonMainToolbarColor">@color/colorButtonDarkGreen</item>
+        <item name="sharedTertiaryColor">@color/colorLightSharedTertiary</item>
+        <item name="customThemeToolbarStyle">@style/CustomToolbarStyle</item>
+    </style>
+
+    <!-- Custom Clay -->
+    <style name="ClayTheme" parent="Custom">
+        <item name="sharedCustomTheme">@style/Custom</item>
+        <item name="windowBackgroundColor">@color/colorClayBG</item>
+        <item name="toolbarColor">@color/colorDarkToolbar</item>
+        <item name="textAppNameColor">@color/colorDarkText</item>
+        <item name="textPrimaryColor">@color/colorLightText</item>
+        <item name="textSecondaryColor">@color/colorLightTextSecondary</item>
+        <item name="buttonPrimaryColor">@color/colorButtonDarkGreen</item>
+        <item name="buttonSecondaryColor">@color/colorButtonLightGreen</item>
+        <item name="buttonMainToolbarColor">@color/colorButtonLightGreen</item>
+        <item name="sharedTertiaryColor">@color/colorLightSharedTertiary</item>
+        <item name="customThemeToolbarStyle">@style/ClayToolbarStyle</item>
+    </style>
+
+    <!-- Shared -->
+    <style name="Custom" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorButtonLightGreen</item>
+        <item name="buttonSmallColor">@color/colorButtonRed</item>
+        <item name="buttonFavColor">@color/colorButtonGold</item>
+        <item name="colorAccent">?attr/sharedTertiaryColor</item>
+        <item name="android:windowBackground">?attr/windowBackgroundColor</item>
+        <item name="android:textColor">?attr/textPrimaryColor</item>
+        <item name="android:textColorSecondary">?attr/textSecondaryColor</item>
+        <item name="android:itemBackground">?attr/windowBackgroundColor</item>
+        <item name="alertDialogTheme">@style/PrefDialogStyle</item>
+        <item name="editTextStyle">@style/EditTextStyle</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="CustomToolbarStyle" parent="Theme.AppCompat">
+        <item name="android:background">?attr/toolbarColor</item>
+        <item name="android:textColorPrimary">?attr/textAppNameColor</item>
+        <item name="android:textColorSecondary">?attr/buttonPrimaryColor</item> <!-- changes color of back arrow button -->
+        <item name="android:actionMenuTextColor">?attr/textAppNameColor</item>
+    </style>
+    <!-- Clay Toolbar -->
+    <style name="ClayToolbarStyle" parent="CustomToolbarStyle">
+        <item name="android:textColorSecondary">?attr/buttonMainToolbarColor</item> <!-- changes color of back arrow button -->
+    </style>
+
+    <!-- For Pref Dialogs -->
+    <style name="PrefDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="textColorAlertDialogListItem">?attr/textPrimaryColor</item>
+        <item name="android:textColor">?attr/textPrimaryColor</item>
+        <item name="android:textColorPrimary">?attr/textPrimaryColor</item>
+        <item name="android:textColorSecondary">?attr/textSecondaryColor</item>
+        <item name="colorAccent">?attr/sharedTertiaryColor</item>
+        <item name="android:colorBackground">?attr/windowBackgroundColor</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <!-- For EditText -->
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">?attr/textPrimaryColor</item>
+        <item name="android:textColorPrimary">?attr/textPrimaryColor</item>
+        <item name="android:textColorSecondary">?attr/textSecondaryColor</item>
+    </style>
 </resources>

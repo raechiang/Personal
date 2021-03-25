@@ -9,8 +9,17 @@ import androidx.preference.PreferenceDialogFragmentCompat;
 
 import com.rae.gongfutimer_v2.preferences.DeleteDialogPreference;
 
+/**
+ * This class is the dialog that will pop up when the user is in the Settings and requests to delete
+ * all timer configurations.
+ */
 public class DeleteDialogPreferenceFragmentCompat extends PreferenceDialogFragmentCompat
 {
+    /**
+     * This method checks the user's confirmation status upon closing the dialog. If they confirmed
+     * to delete the configurations, then the preference will proceed to carry out the deletion.
+     * @param positiveResult - True if the user confirmed to delete, false otherwise.
+     */
     @Override
     public void onDialogClosed(boolean positiveResult)
     {
@@ -26,6 +35,11 @@ public class DeleteDialogPreferenceFragmentCompat extends PreferenceDialogFragme
         }
     }
 
+    /**
+     * This method creates and returns a new instance of this dialog fragment.
+     * @param preference
+     * @return
+     */
     public static DeleteDialogPreferenceFragmentCompat newInstance(Preference preference)
     {
         final DeleteDialogPreferenceFragmentCompat fragment = new DeleteDialogPreferenceFragmentCompat();

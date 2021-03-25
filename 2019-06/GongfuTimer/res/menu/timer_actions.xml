@@ -5,5 +5,6 @@
         android:id="@+id/saveOrEdit"
         android:icon="@drawable/ic_edit_black_24dp"
         android:title="@string/actions_modify_timer"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        app:iconTint="?attr/buttonMainToolbarColor" />
 </menu>

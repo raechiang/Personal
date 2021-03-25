@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_theme_option_entries">
+        <item>@string/pref_theme_label_dark</item>
+        <item>@string/pref_theme_label_light</item>
+        <item>@string/pref_theme_label_clay</item>
+    </array>
+    <array name="pref_theme_option_entry_values">
+        <item>@string/pref_theme_value_dark</item>
+        <item>@string/pref_theme_value_light</item>
+        <item>@string/pref_theme_value_clay</item>
+    </array>
+
+</resources>

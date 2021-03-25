@@ -11,13 +11,26 @@ import com.rae.gongfutimer_v2.R;
 
 import java.util.Locale;
 
+/**
+ * This is a View for the numpad input for individual timer steps. It should have a few rows of
+ * buttons: the numbers 0 to 9, a clear button, and a backspace button.
+ */
 public class SaveNumpadInputView extends RelativeLayout
 {
+    /**
+     * The constructor.
+     * @param context
+     */
     public SaveNumpadInputView(Context context)
     {
         super(context);
     }
 
+    /**
+     * The constructor.
+     * @param context
+     * @param attrs
+     */
     public SaveNumpadInputView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
@@ -29,6 +42,9 @@ public class SaveNumpadInputView extends RelativeLayout
         setButtons();
     }
 
+    /**
+     * This simply sets the text of the buttons.
+     */
     private void setButtons()
     {
         int[] numButtonIds = {R.id.save_numpad_n0_button,

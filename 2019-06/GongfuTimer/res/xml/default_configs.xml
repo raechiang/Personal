@@ -1,68 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Source: https://meileaf.com/resources/pdf/mei-leaf-tea-brewing-guide.pdf -->
-    <configs>
-        <timer_config>
-            <name>White</name>
-            <timer_initial>20</timer_initial>
-            <timer_increment>10</timer_increment>
-            <repetitions>5</repetitions>
-        </timer_config>
+  <!-- Timing Source: https://meileaf.com/resources/pdf/mei-leaf-tea-brewing-guide.pdf -->
+  <configs>
+    <timer_config>
+      <name>White</name>
+      <timer_initial>20</timer_initial>
+      <timer_increment>10</timer_increment>
+      <repetitions>5</repetitions>
+      <icon_color>#86A07C</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>Green</name>
-            <timer_initial>15</timer_initial>
-            <timer_increment>3</timer_increment>
-            <repetitions>5</repetitions>
-        </timer_config>
+    <timer_config>
+      <name>Green</name>
+      <timer_initial>15</timer_initial>
+      <timer_increment>3</timer_increment>
+      <repetitions>5</repetitions>
+      <icon_color>#427C29</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>Yellow</name>
-            <timer_initial>15</timer_initial>
-            <timer_increment>5</timer_increment>
-            <repetitions>5</repetitions>
-        </timer_config>
+    <timer_config>
+      <name>Yellow</name>
+      <timer_initial>15</timer_initial>
+      <timer_increment>5</timer_increment>
+      <repetitions>5</repetitions>
+      <icon_color>#D8CA73</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>Oolong Strip</name>
-            <timer_initial>20</timer_initial>
-            <timer_increment>5</timer_increment>
-            <repetitions>9</repetitions>
-        </timer_config>
+    <timer_config>
+      <name>Oolong Strip</name>
+      <timer_initial>20</timer_initial>
+      <timer_increment>5</timer_increment>
+      <repetitions>9</repetitions>
+      <icon_color>#869156</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>Oolong Ball</name>
-            <timer_initial>25</timer_initial>
-            <timer_increment>5</timer_increment>
-            <repetitions>9</repetitions>
-        </timer_config>
+    <timer_config>
+      <name>Oolong Ball</name>
+      <timer_initial>25</timer_initial>
+      <timer_increment>5</timer_increment>
+      <repetitions>9</repetitions>
+      <icon_color>#476308</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>Black Small Leaf</name>
-            <timer_initial>10</timer_initial>
-            <timer_increment>5</timer_increment>
-            <repetitions>8</repetitions>
-        </timer_config>
+    <timer_config>
+      <name>Black Small Leaf</name>
+      <timer_initial>10</timer_initial>
+      <timer_increment>5</timer_increment>
+      <repetitions>8</repetitions>
+      <icon_color>#A83327</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>Black Large Leaf</name>
-            <timer_initial>15</timer_initial>
-            <timer_increment>5</timer_increment>
-            <repetitions>8</repetitions>
-        </timer_config>
+    <timer_config>
+      <name>Black Large Leaf</name>
+      <timer_initial>15</timer_initial>
+      <timer_increment>5</timer_increment>
+      <repetitions>8</repetitions>
+      <icon_color>#7F0B0B</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>PuErh Raw</name>
-            <timer_initial>10</timer_initial>
-            <timer_increment>3</timer_increment>
-            <repetitions>15</repetitions>
-        </timer_config>
+    <timer_config>
+      <name>PuErh Raw</name>
+      <timer_initial>10</timer_initial>
+      <timer_increment>3</timer_increment>
+      <repetitions>15</repetitions>
+      <icon_color>#6B5B51</icon_color>
+    </timer_config>
 
-        <timer_config>
-            <name>PuErh Ripe</name>
-            <timer_initial>10</timer_initial>
-            <timer_increment>5</timer_increment>
-            <repetitions>20</repetitions>
-        </timer_config>
-    </configs>
+    <timer_config>
+      <name>PuErh Ripe</name>
+      <timer_initial>10</timer_initial>
+      <timer_increment>5</timer_increment>
+      <repetitions>20</repetitions>
+      <icon_color>#504051</icon_color>
+    </timer_config>
+  </configs>
 </resources>

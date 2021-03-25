@@ -7,10 +7,9 @@
     tools:context="com.rae.gongfutimer_v2.activities.SaveConfigActivity"
     tools:showIn="@layout/activity_save_config" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/save_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        />
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/save_recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:scrollbars="vertical" />
 </RelativeLayout>

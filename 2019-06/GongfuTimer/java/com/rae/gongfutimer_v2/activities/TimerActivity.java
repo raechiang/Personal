@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,33 +21,96 @@ import com.rae.gongfutimer_v2.utils.TimerConfig;
 
 import java.util.Locale;
 
-public class TimerActivity extends AppCompatActivity
+/**
+ * This activity runs the timer configurations in seconds. Users can run, pause, or reset the timer,
+ * and they can navigate through the steps if they want to. The toolbar has a button that allows the
+ * user to edit the selected timer configuration. Pressing back from there, selecting delete, and
+ * saving the timer will bring the user to the LoadConfigActivity.
+ */
+public class TimerActivity extends TimerConfigActivity
 {
-    // Constant
+    // Constants
+    /**
+     * The interval to receive onTick callbacks.
+     */
     private final static long COUNTDOWN_INTERVAL = 10;
+    /**
+     * For the conversion of seconds to milliseconds.
+     */
     private final static long SEC_TO_MIL_CONVERSION = 1000;
 
     // Timer Fields
+    /**
+     * The timer itself.
+     */
     private CountDownTimer timer;
+    /**
+     * The position of the timer configuration in the data set.
+     */
     private int receivedPosition;
+    /**
+     * The active timer configuration.
+     */
     private TimerConfig timerConfig;
+    /**
+     * An array containing all of the timer steps from the {@link #timerConfig}.
+     */
     private long[] timersInSecs;
+    /**
+     * The current iteration (step) of the timer configuration.
+     */
     private int iteration;
+    /**
+     * The total number of timer steps.
+     */
     private int totalIterations;
+    /**
+     * A boolean indicating that the timer has started a countdown.
+     */
     private boolean timerStarted;
 
     // Views
+    /**
+     * The view that displays the current timer step.
+     */
     private TimerView timerView;
+    /**
+     * The text that displays the iteration number.
+     */
     private TextView iterationOfTextView;
+    /**
+     * This button runs and pauses the timer.
+     */
     private FloatingActionButton timerButton;
+    /**
+     * This button will restart the timer. If the timer is already running, it will restart and
+     * pause the timer within the iteration. If the timer has reached the end of its final
+     * iteration, it will restart the timer from the first step.
+     */
     private FloatingActionButton restartButton;
 
+    /**
+     * This initializes the activity. It sets up the UI and will process the intent.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        applyTheme();
+
         setContentView(R.layout.activity_timer);
 
+        init();
+    }
+
+    /**
+     * This sets up the action bar at the top.
+     */
+    @Override
+    protected void setActionBar()
+    {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -57,16 +119,18 @@ public class TimerActivity extends AppCompatActivity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
         }
-
-        init();
     }
 
-    private void init()
+    /**
+     * This method processes intent and populates the UI with relevant information.
+     */
+    @Override
+    protected void init()
     {
-        Intent intent = getIntent();
-        receivedPosition = intent.getIntExtra(getString(R.string.load_position_extra), SaveConfigActivity.NEW_UNSAVED_TIMER);
-        timerConfig = (TimerConfig) intent.getSerializableExtra(getString(R.string.load_timer_extra));
+        setActionBar();
+        processIntent();
         timerStarted = false;
+
         if (timerConfig != null)
         {
             // get needed views
@@ -75,9 +139,13 @@ public class TimerActivity extends AppCompatActivity
             iterationOfTextView = (TextView) findViewById(R.id.timer_iteration_current_text_view);
             TextView totalReps = (TextView) findViewById(R.id.timer_iteration_total_text_view);
             timerButton = (FloatingActionButton) findViewById(R.id.timer_timer_floating_action_button);
-            ImageButton prevIterationButton = (ImageButton) findViewById(R.id.timer_prev_image_button);
-            ImageButton nextIterationButton = (ImageButton) findViewById(R.id.timer_next_image_button);
             restartButton = (FloatingActionButton) findViewById(R.id.timer_restart_floating_action_button);
+
+            ImageView imageView = (ImageView) findViewById(R.id.timer_image_view_placeholder);
+            imageView.setImageResource(timerConfig.getIconStyle());
+            imageView.setColorFilter(timerConfig.getIconColor());
+
+            setListeners();
 
             // Text Setting
             // set name
@@ -85,78 +153,16 @@ public class TimerActivity extends AppCompatActivity
             // set iterations
             iteration = 0;
             totalIterations = timerConfig.getTotalInfusions();
-            //iterationOfTextView.setText(iteration + 1);
             totalReps.setText(String.format(Locale.US, "%d", totalIterations));
             // set current timer
             timersInSecs = timerConfig.getTimerSeconds();
-            //updateTimerTextView(timersInSecs[iteration]);
             updateNumberTextViews();
-
-            // TODO: set image and anything else that might be added
-            //ImageView timerImageTest = (ImageView) findViewById(R.id.timer_image_view_placeholder);
-            //timerImageTest.setColorFilter(getResources().getColor(R.color.colorGreenTest));
-            //^That does indeed change the color of the vector
 
             // Button Setting
             if (timerConfig.getTotalInfusions() <= 0)
             {
                 timerButton.setEnabled(false);
             }
-            timerButton.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    if (!(timerStarted))
-                    {
-                        updateNumberTextViews();
-                        makeTimer(timersInSecs[iteration]);
-                        timer.start();
-                        timerStarted = true;
-                        changeTimerButtonImage(R.drawable.ic_pause_black_24dp);
-                    }
-                    else
-                    {
-                        pauseResume();
-                    }
-                }
-            });
-            restartButton.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    restartButtonClick(v);
-                }
-            });
-            prevIterationButton.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    // decrease iteration
-                    if (iteration != 0)
-                    {
-                        --iteration;
-                        // adjust timer
-                        restartButtonClick(v);
-                    }
-                }
-            });
-            nextIterationButton.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    // increase iteration
-                    if (iteration < totalIterations - 1)
-                    {
-                        ++iteration;
-                        // adjust timer
-                        restartButtonClick(v);
-                    }
-                }
-            });
         }
         else
         {
@@ -165,6 +171,90 @@ public class TimerActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * This method grabs the information needed when this Activity is launched. This Activity needs
+     * the timer configuration and its position in the data set.
+     */
+    @Override
+    protected void processIntent()
+    {
+        Intent intent = getIntent();
+        receivedPosition = intent.getIntExtra(getString(R.string.load_position_extra), SaveConfigActivity.NEW_UNSAVED_TIMER);
+        timerConfig = (TimerConfig) intent.getSerializableExtra(getString(R.string.load_timer_extra));
+    }
+
+    /**
+     * This method sets up the listeners for various Views (the timer, restart, next iteration, and
+     * previous iteration buttons).
+     */
+    @Override
+    protected void setListeners()
+    {
+        ImageButton prevIterationButton = (ImageButton) findViewById(R.id.timer_prev_image_button);
+        ImageButton nextIterationButton = (ImageButton) findViewById(R.id.timer_next_image_button);
+
+        timerButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if (!(timerStarted))
+                {
+                    updateNumberTextViews();
+                    makeTimer(timersInSecs[iteration]);
+                    timer.start();
+                    timerStarted = true;
+                    changeTimerButtonImage(R.drawable.ic_pause_black_24dp);
+                }
+                else
+                {
+                    pauseResume();
+                }
+            }
+        });
+        restartButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                restartButtonClick(v);
+            }
+        });
+        prevIterationButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                // decrease iteration
+                if (iteration != 0)
+                {
+                    --iteration;
+                    // adjust timer
+                    restartButtonClick(v);
+                }
+            }
+        });
+        nextIterationButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                // increase iteration
+                if (iteration < totalIterations - 1)
+                {
+                    ++iteration;
+                    // adjust timer
+                    restartButtonClick(v);
+                }
+            }
+        });
+    }
+
+    /**
+     * This method starts a new LoadConfigActivity instead of navigating backwards and ends this
+     * Activity.
+     * @return - True.
+     */
     @Override
     public boolean onSupportNavigateUp()
     {
@@ -175,6 +265,10 @@ public class TimerActivity extends AppCompatActivity
         return true;
     }
 
+    /**
+     * This simply updates the {@link #timerView} as the countdown timer ticks.
+     * @param currentTimerInSecs - The current countdown time in seconds.
+     */
     private void updateTimerTextView(long currentTimerInSecs)
     {
         long minutes = currentTimerInSecs / 60;
@@ -183,17 +277,30 @@ public class TimerActivity extends AppCompatActivity
                 String.format(Locale.US, "%02d", seconds).toCharArray());
     }
 
+    /**
+     * This method updates the {@link #iterationOfTextView} with the current iteration number and
+     * the {@link #timerView} by calling {@link #updateTimerTextView(long)}.
+     */
     private void updateNumberTextViews()
     {
         iterationOfTextView.setText(String.format(Locale.US, "%d", iteration + 1));
         updateTimerTextView(timersInSecs[iteration]);
     }
 
+    /**
+     * This method sets the image resource of the timer floating action button. It should display a
+     * timer, play, or pause symbol.
+     * @param id - The id of the resource.
+     */
     private void changeTimerButtonImage(int id)
     {
         timerButton.setImageResource(id);
     }
 
+    /**
+     * This method makes a new CountDownTimer and assigns it to {@link #timer}.
+     * @param secs - The current timer in seconds.
+     */
     private void makeTimer(long secs)
     {
         timer = new CountDownTimer((secs * SEC_TO_MIL_CONVERSION), COUNTDOWN_INTERVAL)
@@ -227,6 +334,10 @@ public class TimerActivity extends AppCompatActivity
         };
     }
 
+    /**
+     * This method decides whether to pause or resume and carries out the opposite of the current
+     * state.
+     */
     private void pauseResume()
     {
         if (timer.getmPaused())
@@ -243,6 +354,10 @@ public class TimerActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * This method handles restarting the current timer.
+     * @param view
+     */
     private void restartButtonClick(View view)
     {
         Log.i("TIMERACTIVITY", "reset wanted");
@@ -278,13 +393,23 @@ public class TimerActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Inflates the menu to the action bar.
+     * @param menu
+     * @return - True.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.timer_actions, menu);
         return true;
     }
-
+    /**
+     * There is only one option in TimerActivity, which goes to a SaveConfigActivity with the
+     * current timerConfig and allows the user to make changes to the timerConfig.
+     * @param item - The selected item.
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -299,6 +424,10 @@ public class TimerActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * This method is called when the edit button is selected from the action bar. It starts a new
+     * SaveConfigActivity so the user can make changes to the current timerConfig.
+     */
     private void selectSaveEditTimer()
     {
         Intent intent = new Intent(this, SaveConfigActivity.class);

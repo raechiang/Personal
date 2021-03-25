@@ -3,14 +3,18 @@
     <dimen name="padding_24">24dp</dimen>
     <dimen name="padding_16">16dp</dimen>
     <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_4">4dp</dimen>
 
     <dimen name="text_size_large_button">36sp</dimen>
 
     <dimen name="text_size_title_display">42sp</dimen>
     <dimen name="text_size_large_display">40sp</dimen>
+    <dimen name="text_size_med_large_display">32sp</dimen>
     <dimen name="text_size_med_display">24sp</dimen>
     <dimen name="text_size_small_display">20sp</dimen>
     <dimen name="text_size_smaller_display">16sp</dimen>
+
+    <dimen name="big_icon_size">80dp</dimen>
 
     <dimen name="button_icon_size">56dp</dimen>
     <dimen name="button_smaller_size">42dp</dimen>
