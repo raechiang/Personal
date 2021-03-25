@@ -1,15 +1,23 @@
 # Gongfu Timer (WIP)
+
 <p>This is a timer app that has the ability to store many configurations of potentially multi-step timers with some visual customization. The app is not complete, but it is useable; mainly the design/visual parts that remain unfinished.</p>
 <p>This timer is originally made for tea-making, in the eastern style of *gongfu*, which involves frequent and short steeps with high leaf-to-water ratios in small vessels. Later steeps are done over longer durations. If you are into tea-brewing, you probably also have a large arsenal of different leaves, so this app also saves multiple custom timer configurations, which is more convenient than memorizing all of the unique timings that every different batch of leaves deserves. This version of the tea timer allows control over the exact timer for every infusion step. Since each timer step can be manually set and is not restricted to linearly increasing an initial timer, you can vary the differential of each step, thereby expanding its use to more than just gongfu brewing. I use it for cleaning tools, for example, but you can use it for drip-brew coffee or HIIT--you can use it for anything that can make use of a short interval timer.</p>
 
 ## Using This App
+
+### List of Timers
+
 <p>Upon opening the app for the first time, a list of pre-made "default" timers will be displayed. These can be deleted or restored via the Settings button in the upper right-hand corner of the list screen. Each element of the list can be clicked on to start the timer, or it can be long-held to edit the timer. The vertical More dots in each row will open a drop-down menu, which allows you to Edit or Delete that configuration.</p>
 
 <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss00_load.png" width="400">
 
-<p>If you click on a timer from the Load screen, it will bring you to a screen where you can run the timer. Below is an example of one of the default timers: Black Large Leaf. The lower right-hand button is for Go/Pause, and the lower left-hand button is for Restarting the current step or moving to the next step if you are at 0 seconds remaining. The `<` and `>` buttons near the center can control the step number that you are on, which is helpful if, say, you accidentally terminate the app or come back later, or maybe you want to skip around for whatever reason. The Pencil button in the upper right-hand corner can be used to Edit the timer.</p>
+### Running Timers
+
+<p>If you click on a timer from the load screen, it will bring you to a screen where you can run the timer. Below is an example of one of the default timers: Black Large Leaf. The lower right-hand button is for Go/Pause, and the lower left-hand button is for Restarting the current step or moving to the next step if you are at 0 seconds remaining. The `<` and `>` buttons near the center can control the step number that you are on, which is helpful if, say, you accidentally terminate the app or come back later, or maybe you want to skip around for whatever reason. The Pencil button in the upper right-hand corner can be used to Edit the timer.</p>
 
 <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss09_run_timer.png" width="400">
+
+### Editing Timers
 
 <p>From the list screen, you may add a new timer using the `+` Floating Action Button in the bottom center of the screen, which will take you to an edit screen like so:</p>
 
@@ -29,7 +37,12 @@
 
 <figure>
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss05_save_existing_icon_select.png" width="400">
-  <figcaption><p>(Editing a timer configuration's icon. Dark theme.)</p></figcaption>
+  <figcaption><p>(Editing a timer configuration's icon. Hex input disabled. Dark theme.)</p></figcaption>
+</figure>
+
+<figure>
+  <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss06_save_existing_icon_select_hex.png" width="400">
+  <figcaption><p>(Editing a timer configuration's icon. Hex input enabled. Clay theme.)</p></figcaption>
 </figure>
 
 <figure>
@@ -42,4 +55,18 @@
 <figure>
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss04_save_existing_numpad_err.png" width="400">
   <figcaption><p>(Editing a timer step's value using the number pad. Message toast appears and red exclamation appears, which can be clicked to display more information. Dark theme.)</p></figcaption>
+</figure>
+
+<figure>
+  <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss07_save_existing_unsaved.png" width="400">
+  <figcaption><p>(Attempting to navigate elsewhere without saving the timer configuration. Dark theme.)</p></figcaption>
+</figure>
+
+### Settings
+
+<p>From the list screen, clicking the cog in the upper right in the toolbar opens the Settings screen. The increment amount mentioned earlier can be changed. The theme can be changed. Hex input for icon style can be enabled or disabled. There is a feedback button. Timer configurations can be changed in three ways here: default timers can be restored, default timers can be removed, or all timers can be deleted.</p>
+
+<figure>
+  <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss07_save_existing_unsaved.png" width="400">
+  <figcaption><p>(Deleting all timers, which opens a confirmation dialog. Dark theme.)</p></figcaption>
 </figure>
