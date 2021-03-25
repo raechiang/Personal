@@ -12,13 +12,18 @@ If you click on a timer from the Load screen, it will bring you to a screen wher
 
 From the list screen, you may add a new timer using the `+` Floating Action Button in the bottom center of the screen, which will take you to an edit screen like so:
 
-<img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss02_save_new.png" width="500">
+<figure>
+  <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss02_save_new.png" width="500">
+  <figcaption>(Making a new "blank" unsaved timer. Dark theme.)</figcaption>
+</figure>
 
-All fields have default values as you can see. You can change the name of a timer by entering text where "Unnamed Timer" is. The icon's style and color can be changed by clicking the icon just below the name. The timer configuration can be marked as a Favorite timer by clicking the star to the right of the icon selection button, which will cause the timer configuration to sort to the top of the list. The values of a timer step can be modified by 1 second by using the `-` or `+` buttons surrounding the timer value, or it can be changed by opening a number pad dialog box by clicking the timer step's text (so, in the image depicted below, by clicking on the "00:01" text). The large `+` button at the bottom of the screen will add another step to the timer, which will automatically increment by some default amount that can be adjusted in the Settings. The lower left contains two Floating Action Buttons: a save button and a delete button (the latter of which is hidden if the timer does not exist in your saved configuration database). The lower right corner contains a Floating Action Button that runs this timer. As far as errors the user can cause, the only thing that they need to worry about is using a non-empty Name for the timer.
-
-From the Load screen, if you long-hold a timer or select Edit from the view More vertical buttons, you will be able to edit the timer.
+From the list screen, if you long-hold a timer or select Edit from the view More vertical buttons, you will be able to edit the timer.
 
 <figure>
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss01_save_existing.png" width="500">
-  <figcaption>Editing an existing timer. Clay theme.</figcaption>
+  <figcaption>(Editing an existing timer. Clay theme.)</figcaption>
 </figure>
+
+All fields have default values as you can see. You can change the name of a timer by entering text where "Unnamed Timer" is. The icon's style and color can be changed by clicking the icon just below the name. The timer configuration can be marked as a Favorite timer by clicking the star to the right of the icon selection button, which will cause the timer configuration to sort to the top of the list. The values of a timer step can be modified by 1 second by using the `-` or `+` buttons surrounding the timer value, or it can be changed by opening a number pad dialog box by clicking the timer step's text (so, in the image depicted below, by clicking on the "00:01" text). The large `+` button at the bottom of the screen will add another step to the timer, which will automatically increment by some default amount that can be adjusted in the Settings. The lower left contains two Floating Action Buttons: a save button and a delete button (the latter of which is hidden if the timer does not exist in your saved configuration database). The lower right corner contains a Floating Action Button that runs this timer. As far as errors the user can cause, the only thing that they need to worry about is using a non-empty Name for the timer.
+
+
