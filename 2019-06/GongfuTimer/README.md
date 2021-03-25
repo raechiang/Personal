@@ -22,7 +22,7 @@
 
 <p><figure>
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss01_save_existing.png" width="400">
-  <figcaption>(Editing an existing timer. Clay theme.)</figcaption>
+  <figcaption>(Editing an existing timer. Light theme.)</figcaption>
 </figure></p>
 
 <p>You can change the name of a timer by entering text where the timer configuration's name or "Unnamed Timer" is. The icon's style and color can be changed by clicking the icon just below the name. The timer configuration can be marked as a Favorite timer by clicking the star to the right of the icon selection button, which will cause the timer configuration to sort to the top of the list. The values of a timer step can be modified by 1 second by using the `-` or `+` buttons surrounding the timer value, or it can be changed by opening a number pad dialog box by clicking the timer step's text (so, in the image depicted below, by clicking on the "00:01" text). The large `+` button at the bottom of the screen will add another step to the timer, which will automatically increment by some default amount that can be adjusted in the Settings. The `x` button at the right end of the timer step's row can delete that timer step. The lower left contains two Floating Action Buttons: a save button and a delete button (the latter of which is hidden if the timer does not exist in your saved configuration database). The lower right corner contains a Floating Action Button that runs this timer. As far as errors the user can cause, the only thing that they need to worry about is using a non-empty Name for the timer.</p>
