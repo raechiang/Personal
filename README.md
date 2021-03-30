@@ -3,7 +3,7 @@ As the name implies, this contains personal projects.
 ## Contents
 - <a href="https://github.com/raechiang/Personal/tree/master/2018-10/SudokuGenerator">2018-10/SudokuGenerator</a>: (C++) simple project that generates a filled Sudoku board
 - <a href="https://github.com/raechiang/Personal/tree/master/2019-04/ConsumablesCharting">2019-04/ConsumablesCharting</a>: (Java) simple project that generates a graph meant for comparing and viewing expenditures
-- <a href="https://github.com/raechiang/Personal/tree/master/2019-06/GongfuTimer">2019-06/GongfuTimer</a>: (Java) an Android app that runs and saves repeating timers (work in progress)
+- <a href="https://github.com/raechiang/Personal/tree/master/2019-06/GongfuTimer">2019-06/GongfuTimer</a>: (Java) an Android app that runs and saves timers (work in progress)
 ## Sudoku Generator
 I used to play a lot of sudoku, so I wrote a generator kind of on a whim. It just uses backtracking. I did some light comparison of different board initiations over 55000 generations for fun.
 ## Consumables Chart Generator
