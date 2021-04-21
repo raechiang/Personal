@@ -1,0 +1,7 @@
+name:one-line
+Sunday [0,300) [900,1800)
+
+name: many lines
+Sunday [0,300)
+sunday: [900,1000)
+sunday[1000,1530)[1530,1600),[1600,1630) [1630,1800)

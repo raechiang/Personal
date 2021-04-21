@@ -1,0 +1,26 @@
+name: Baatu
+Sunday [0,300), [1100,2400)
+Monday [0,300)
+Saturday [2100,2400)
+
+name: Chai
+Sunday [1800,2100)
+
+name: empty
+
+name: Desu
+Sunday [0,2400)
+Monday [0,300)
+Saturday [2100,2400)
+
+name: Ezmi
+Sunday [0,2400)
+Thursday [0,1700),[2130,2400)
+Friday [0,2400)
+Saturday [0,2400)
+
+name: daEx
+Monday [0,200) [1800,2130)
+
+name: no time
+sunday [,)
