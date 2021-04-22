@@ -1,6 +1,9 @@
 package com.rae.gongfutimer_v2.activities;
 
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -231,6 +234,7 @@ public class TimerActivity extends TimerConfigActivity
                     --iteration;
                     // adjust timer
                     restartButtonClick(v);
+                    timerButton.setEnabled(true);
                 }
             }
         });
@@ -323,11 +327,17 @@ public class TimerActivity extends TimerConfigActivity
                 timerStarted = false;
                 if (iteration == totalIterations)
                 {
+                    // done
                     changeTimerButtonImage(R.drawable.ic_timer_black_24dp);
                     timerButton.setEnabled(false);
+                    // TODO: timer notification alarm
+                    Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), alarmSound);
+                    r.play();
                 }
                 else
                 {
+                    // not done
                     changeTimerButtonImage(R.drawable.ic_play_arrow_black_24dp);
                 }
             }

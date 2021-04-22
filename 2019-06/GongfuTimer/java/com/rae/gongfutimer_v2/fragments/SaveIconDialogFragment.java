@@ -240,15 +240,27 @@ public class SaveIconDialogFragment extends DialogFragment
             {
                 if (item.getItemId() == R.id.save_icon_apply_action)
                 {
-                    if (!(hexHasError()))
+                    if (paletteMap.containsKey(lastCircle))
                     {
+                        // wants preset
                         listener.onApplyIconClick(lastIcon, lastColor);
                         dismiss();
                     }
                     else
                     {
-                        // TODO: want to highlight/catch attention?
-                        Toast.makeText(getActivity(), "The hex value provided is invalid.", Toast.LENGTH_LONG).show();
+                        // wants hex
+                        if (!(hexHasError()))
+                        {
+                            // good hex
+                            listener.onApplyIconClick(lastIcon, lastColor);
+                            dismiss();
+                        }
+                        else
+                        {
+                            // bad hex
+                            Toast.makeText(getActivity(), "The hex value provided is invalid.", Toast.LENGTH_LONG).show();
+                            hexInputEditText.requestFocus();
+                        }
                     }
                 }
                 return false;
@@ -276,7 +288,11 @@ public class SaveIconDialogFragment extends DialogFragment
         {
             ConstraintLayout hexInputLayout = (ConstraintLayout) view.findViewById(R.id.save_icon_hex_input_layout);
             hexInputLayout.setVisibility(View.VISIBLE);
+            ImageView hexInputApplyImage = (ImageView) view.findViewById(R.id.save_icon_dialog_hex_input_apply_image_view);
             hexInputPreviewImage = view.findViewById(R.id.save_icon_dialog_hex_input_preview_image_view);
+            setHexValues();
+            hexInputEditText.setSelectAllOnFocus(true);
+            /*
             hexInputEditText.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -286,7 +302,8 @@ public class SaveIconDialogFragment extends DialogFragment
                 public void onTextChanged(CharSequence s, int start, int before, int count)
                 {
                     // defaults to black
-                    int color = Color.BLACK;
+                    //int color = Color.BLACK;
+                    int color = lastColor; // defaults to last color
                     if (!(hexHasError()))
                     {
                         int numZeroesToAppend = 6 - s.length();
@@ -307,6 +324,42 @@ public class SaveIconDialogFragment extends DialogFragment
 
                 @Override
                 public void afterTextChanged(Editable s) {
+                }
+            });
+            */
+            hexInputApplyImage.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    // defaults to black
+                    //int color = Color.BLACK;
+                    int color = lastColor; // defaults to last color
+                    if (!(hexHasError()))
+                    {
+                        /*String s = hexInputEditText.getText().toString();
+                        int numZeroesToAppend = 6 - s.length();
+                        String colorString = s.toString();*/
+                        String colorString = hexInputEditText.getText().toString();
+                        int numZeroesToAppend = 6 - colorString.length();
+
+                        if (numZeroesToAppend != 0)
+                        {
+                            StringBuilder stringBuilder = new StringBuilder(colorString);
+                            for (int i = 0; i < numZeroesToAppend; ++i)
+                            {
+                                stringBuilder.append(0);
+                            }
+                            colorString = stringBuilder.toString();
+                        }
+                        color = Color.parseColor(String.format(Locale.US, "#%s", colorString));
+                        changeColorSelection(hexInputPreviewImage, color);
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "The hex value provided is invalid.", Toast.LENGTH_LONG).show();
+                        hexInputEditText.requestFocus();
+                    }
                 }
             });
         }
@@ -391,6 +444,7 @@ public class SaveIconDialogFragment extends DialogFragment
                     try {
                         int colorPicked = paletteMap.get(paletteCircle);
                         changeColorSelection(paletteCircle, getResources().getColor(colorPicked));
+                        setHexValues();
                     } catch (NullPointerException npe) {
                         Log.e("SAVEICONDIALOGFRAG", "Could not find associated color from map");
                     }
@@ -399,6 +453,12 @@ public class SaveIconDialogFragment extends DialogFragment
             }
         });
         return paletteCircle;
+    }
+
+    private void setHexValues()
+    {
+        hexInputEditText.setText(Integer.toHexString(lastColor).toCharArray(), 2, 6);
+        hexInputPreviewImage.setImageDrawable(makePaletteCircle(false, lastColor));
     }
 
     /**

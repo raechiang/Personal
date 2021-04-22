@@ -191,9 +191,9 @@ public class SaveConfigActivity extends TimerConfigActivity implements DeleteCon
         ((DefaultItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         recyclerView.setAdapter(tAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-
         EditText nameTextView = (EditText) findViewById(R.id.save_name_edit_text);
         nameTextView.setText(timerConfig.getName());
+        nameTextView.setSelectAllOnFocus(true);
 
         iconImage = (ImageView) findViewById(R.id.save_icon_image_view);
         iconImage.setImageResource(timerConfig.getIconStyle());
@@ -417,10 +417,10 @@ public class SaveConfigActivity extends TimerConfigActivity implements DeleteCon
         if ((bitCheck & status) == bitCheck)
         {
             // name is wrong
-            // TODO: highlight? animation? blink red? something to catch attention
             Toast.makeText(SaveConfigActivity.this, "A name must be provided.", Toast.LENGTH_LONG).show();
             EditText nameEditText = (EditText) findViewById(R.id.save_name_edit_text);
-            nameEditText.setBackgroundColor(Color.RED);
+            nameEditText.setBackgroundColor(Color.RED); // Kinda jarring...
+            nameEditText.requestFocus();
         }
 
         bitCheck <<= 1;
