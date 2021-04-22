@@ -82,5 +82,3 @@
 <p>Some basic functions still need to be implemented: alarms for the completion of a timer and the feedback button.</p>
 
 <p>Visuals/design could also benefit from some uplifts.</p>
-
-<p>There is an issue with the hex input when changing the icon style.</p>
