@@ -81,6 +81,6 @@
 
 ## Known Issues & Further Development
 
-<p>Some basic functions still need to be implemented: alarms for the completion of a timer and the feedback button.</p>
+<p>The feedback button still needs to be implemented.</p>
 
 <p>Visuals/design could also benefit from some uplifts.</p>
