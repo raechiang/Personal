@@ -16,7 +16,9 @@
 
 ### Running Timers
 
-<p>If you click on a timer from the load screen, it will bring you to a screen where you can run the timer. Below is an example of one of the default timers: Black Large Leaf. The lower right-hand button is for Go/Pause, and the lower left-hand button is for Restarting the current step or moving to the next step if you are at 0 seconds remaining. The `<` and `>` buttons near the center can control the step number that you are on, which is helpful if, say, you accidentally terminate the app or come back later, or maybe you want to skip around for whatever reason. The Pencil button in the upper right-hand corner can be used to Edit the timer.</p>
+<p>If you click on a timer from the load screen, it will bring you to a screen where you can run the timer. After pressing the start timer button, it will run through the displayed timer. Click the play button to continue stepping through the separate timers. After the last timer is complete, the phone's default notification sound will play.</p>
+
+<p>Below is an example of one of the default timers: Black Large Leaf. The lower right-hand button is for Go/Pause, and the lower left-hand button is for Restarting the current step or moving to the next step if you are at 0 seconds remaining. The `<` and `>` buttons near the center can control the step number that you are on, which is helpful if, say, you accidentally terminate the app or come back later, or maybe you want to skip around for whatever reason. The Pencil button in the upper right-hand corner can be used to Edit the timer.</p>
 
 <figure>
   <img src="https://github.com/raechiang/Personal/blob/master/2019-06/GongfuTimer/Screenshots/ss09_run_timer.png" width="400">
@@ -79,6 +81,6 @@
 
 ## Known Issues & Further Development
 
-<p>Some basic functions still need to be implemented: alarms for the completion of a timer and the feedback button.</p>
+<p>The feedback button still needs to be implemented.</p>
 
 <p>Visuals/design could also benefit from some uplifts.</p>
