@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>JS Documentation Page</title>
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <a href="#top"><header>JS Documentation</header></a>
+    <ul>
+      <div class="sleft">
+      <a class="nav-link" href="#Introduction"><li>Introduction</li></a>
+      <a class="nav-link" href="#What_You_Should_Already_Know"><li>What You Should Already Know</li></a>
+      <a class="nav-link" href="#JavaScript_and_Java"><li>JavaScript and Java</li></a>
+      <a class="nav-link" href="#Hello_World"><li>Hello World</li></a>
+      <a class="nav-link" href="#Variables"><li>Variables</li></a>
+      <a class="nav-link" href="#Declaring_Variables"><li>Declaring Variables</li></a>
+      </div>
+      <div class="sright">
+      <a class="nav-link" href="#Variable_Scope"><li>Variable Scope</li></a>
+      <a class="nav-link" href="#Constants"><li>Constants</li></a>
+      <a class="nav-link" href="#Data_Types"><li>Data Types</li></a>
+      <a class="nav-link" href="#if...else_Statement"><li>if...else Statement</li></a>
+      <a class="nav-link" href="#while_Statement"><li>while Statement</li></a>
+      <a class="nav-link" href="#Function_Declarations"><li>Function Declarations</li></a>
+      <a class="nav-link" href="#Reference"><li>Reference</li></a>
+      </div>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language.
+        Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its
+        environment to provide programmatic control over them.</p>
+      <p>JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language
+        elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of
+        purposes by supplementing it with additional objects; for example:</p>
+      <ul>
+        <li>Client-side JavaScript extends the core language by supplying objects to control a browser and its Document
+          Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML form
+          and respond to user events such as mouse clicks, form input, and page navigation.</li>
+        <li>Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a
+          server. For example, server-side extensions allow an application to communicate with a database, provide
+          continuity of information from one invocation to another of the application, or perform file manipulations on
+          a server.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="What_You_Should_Already_Know">
+      <header>What You Should Already Know</header>
+      <p>This guide assumes you have the following basic background:</p>
+      <ul>
+        <li>A general understanding of the Internet and the World Wide Web (WWW)</li>
+        <li>Good working knowledge of HyperText Markup Language (HTML)</li>
+        <li>Some programming experience. If you are new to programming, try one of the tutorials linked on the main page
+          about JavaScript</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="JavaScript_and_Java">
+      <header>JavaScript and Java</header>
+      <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript
+        language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most
+        Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was
+        renamed from LiveScript to JavaScript.</p>
+      <p>In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime
+        system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a
+        prototype-based object model instead of the more common class-based object model. The prototype-based model
+        provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also
+        supports functions without any special declarative requirements. Functions can be properties of objects,
+        executing as loosely typed methods.</p>
+      <p>JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes,
+        and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do
+        not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
+    </section>
+
+    <section class="main-section" id="Hello_World">
+      <header>Hello World</header>
+      <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:
+      </p>
+      <pre><code>function greetMe(yourName) { alert("Hello " + yourName); }
+greetMe("World");</code></pre>
+    </section>
+
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>Variables can store data values.</p>
+      <p>The names of variables, called identifiers, must abide by certain rules:
+      <ul>
+        <li>They can contain letters, digits, underscores, and dollar signs</li>
+        <li>They must start with a letter or with $ and _</li>
+        <li>They are case-sensitive</li>
+        <li>They cannot be a reserved word</li>
+      </ul>
+      <p>You can also use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can use the Unicode escape
+        sequences as characters in identifiers. Some examples of legal names are <kbd>Number_hits</kbd>,
+        <kbd>temp99</kbd>, and <kbd>_name</kbd>.
+      </p>
+    </section>
+
+    <section class="main-section" id="Declaring_Variables">
+      <header>Declaring Variables</header>
+      <p>You can declare a variable in four ways:</p>
+      <ul>
+        <li>Using <kbd>var</kbd></li>
+        <li>Using <kbd>let</kbd></li>
+        <li>Using <kbd>const</kbd></li>
+        <li>Using nothing</li>
+      </ul>
+      <p>The following are valid declarations and assignments:</p>
+      <pre><code>var a = 5;
+let b = 3;
+c = a + b;
+const d = 12;</code></pre>
+      <p>Declarations do not need to be followed by initializations immediately except if you are declaring a
+        <kbd>const</kbd>.
+      </p>
+    </section>
+
+    <section class="main-section" id="Variable_Scope">
+      <header>Variable Scope</header>
+      <p>Javascript has three types of scope:</p>
+      <ul>
+        <li>Block scope: If a variable is declared using <kbd>let</kbd> or <kbd>const</kbd> inside of a block (denoted
+          by curly braces <kbd>{}</kbd>), then it cannot be accessed from outside of the block.</li>
+        <li>Function scope: If a function is declared within a function, it can only be accessed from within the
+          function.</li>
+        <li>Global scope: If a variable is declared outside of a function, it can be accessed from all scripts and
+          functions in the document.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Constants">
+      <header>Constants</header>
+      <p>You can create a read-only, named constant with the <kbd>const</kbd> keyword. The syntax of a constant
+        identifier is the same as for a variable identifier.</p>
+      <code>const PI = 3.14;</code>
+      <p>A constant cannot change value through assignment or be re-declared while the script is running, and it must be
+        initialized to a value when it is declared.</p>
+    </section>
+
+    <section class="main-section" id="Data_Types">
+      <header>Data Types</header>
+      <p>JavaScript has eight data types:</p>
+      <ul>
+        <li>string: a sequence of zero or more characters</li>
+        <li>number: a double value (64-bit floating point)</li>
+        <li>bigint: an integer which is too large to be represented by a number</li>
+        <li>boolean: a true or false value</li>
+        <li>undefined: a value that is not assigned</li>
+        <li>null: a special keyword representing the absence of a value</li>
+        <li>symbol: a unique identifier</li>
+        <li>object: a container representing many properties and methods</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="if...else_Statement">
+      <header>if...else Statement</header>
+      <p>An <kbd>if</kbd> statement will execute a statement if a logical condition is found to be true. An optional
+        <kbd>else</kbd> statement will execute if the condition is found to be false. That is,
+        <kbd>if (condition_is_true) { execute_this_statement; } else { execute_else_statement; }</kbd>.</p>
+      <p><kbd>if</kbd> statements can be compounded with <kbd>else if</kbd> statements. For example,</p>
+      <pre><code>if (a == 1) { val = n + b; }
+else if (a == 2) { val = n * c; }
+else if (a == 3) { val = n - d; }
+else { val = n / e; }</code></pre>
+      <p><kbd>if</kbd> conditions are considered in sequence and will execute at the first true statement.</p>
+    </section>
+
+    <section class="main-section" id="while_Statement">
+      <header>while Statement</header>
+      <p>A <kbd>while</kbd> statement will execute code if a condition is found to be true and will continue to repeat
+        this code until the condition is found to be false. That is,
+        <kbd>while (condition_is_true) execute_statement</kbd>. For example,</p>
+      <code>var n = 0; var x = 0; while (n < 3) { n++; x += n; }</code>
+    </section>
+
+    <section class="main-section" id="Function_Declarations">
+      <header>Function Declarations</header>
+      <p>A function declaration (or definition or statement) consists of the <kbd>function</kbd> keyword, followed by:
+      </p>
+      <ul>
+        <li>the name of the function</li>
+        <li>a list of arguments for the function, enclosed in parentheses and separated by commas</li>
+        <li>statements or code to execute, enclosed in curly brackets <kbd>{}</kbd></li>
+      </ul>
+      <p>For example, this function represents squaring a number:</p>
+      <code>function square(number) { return number * number; }</code>
+      <p>Functions can be invoked or called to execute statements on the given parameters.</p>
+    </section>
+
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <p>Documentation on this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN</a> or <a href="https://www.w3schools.com/">W3 Schools</a>.</p>
+    </section>
+
+  </main>
+</body>
+
+</html>

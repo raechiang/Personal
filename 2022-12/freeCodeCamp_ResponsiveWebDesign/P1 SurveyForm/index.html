@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>freeCodeCamp Survey Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <h1 id="title">freeCodeCamp Survey Form</h1>
+  <p id="description">Thank you for taking the time to help us improve the platform</p>
+
+  <form id="survey-form">
+
+    <div class="form-input">
+      <label id="name-label" for="name">Name
+        <input
+        id="name"
+        type="text"
+        name="name"
+        required
+        placeholder="Enter your name"
+        class="text-input" />
+      </label>
+    </div>
+
+    <div class="form-input">
+      <label id="email-label" for="email">Email
+        <input
+        id="email"
+        type="email"
+        name="email"
+        required
+        placeholder="Enter your Email"
+        class="text-input" />
+      </label>
+    </div>
+
+    <div class="form-input"><label id="number-label" for="number">Age <span class="inline-hint">(optional)</span>
+        <input
+        id="number"
+        type="number"
+        name="number"
+        min="0"
+        max="120"
+        placeholder="Age"
+        class="text-input" />
+      </label>
+    </div>
+
+    <div class="form-input"><label for="current-role">Which option best describes your current role?
+        <select id="dropdown" name="current-role" required>
+         <option disabled selected value>Select current role</option>
+         <option value="student">Student</option>
+         <option value="worker">Full-time worker</option>
+         <option value="learner">Full-time learner</option>
+         <option value="decline">Prefer not to say</option>
+         <option value="other">Other</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-input">
+      <p>Would you recommend freeCodeCamp to a friend?</p>
+      <label for="definitely-recommend">
+          <input
+          id="definitely-recommend"
+          type="radio"
+          name="recommend"
+          value="rec-yes" /> Definitely
+        </label>
+      <label for="maybe-recommend">
+          <input
+          id="maybe-recommend"
+          type="radio"
+          name="recommend"
+          value="rec-maybe" /> Maybe
+        </label>
+      <label for="no-recommend">
+          <input
+          id="no-recommend"
+          type="radio"
+          name="recommend"
+          value="rec-no" /> No
+        </label>
+    </div>
+
+    <div class="form-input">
+      <p> What would you like to see improved? <span class="inline-hint">(Check all that apply)</span> </p>
+      <label>
+         <input
+         id="checkbox-front-projects"
+         type="checkbox"
+         value="front-end-projects" /> Front-end projects
+       </label>
+      <label>
+         <input
+         id="checkbox-back-projects"
+         type="checkbox"
+         value="back-end-projects" /> Back-end projects
+      </label>
+      <label>
+         <input
+         id="checkbox-data-vis"
+         type="checkbox"
+         value="data-visualization" /> Data visualization
+       </label>
+      <label>
+        <input
+        id="checkbox-challenges"
+        type="checkbox"
+        value="challenges" /> Challenges
+      </label>
+      <label>
+         <input
+         id="checkbox-open-src-comm"
+         type="checkbox"
+         value="open-source-community" /> Open source community
+       </label>
+      <label>
+        <input
+         id="checkbox-gitter-help-rooms"
+         type="checkbox"
+         value="gitter-help-rooms" /> Gitter help rooms
+       </label>
+      <label>
+         <input
+         id="checkbox-videos"
+         type="checkbox"
+         value="videos" /> Videos
+       </label>
+      <label>
+         <input
+         id="checkbox-city-meetups"
+         type="checkbox"
+         value="city-meetups" /> City meetups
+       </label>
+      <label>
+         <input
+         id="checkbox-wiki"
+         type="checkbox"
+         value="wiki" /> Wiki
+       </label>
+      <label>
+         <input
+         id="checkbox-forum"
+         type="checkbox"
+         value="forum" /> Forum
+       </label>
+      <label>
+         <input
+         id="checkbox-add-courses"
+         type="checkbox"
+         value="additional-courses" /> Additional courses
+       </label>
+    </div>
+
+    <div class="form-input">
+      <label for="comments"> Any comments or suggestions?
+       <textarea
+       id="comments"
+       name="comments"
+       placeholder="Enter your comment here..."
+       rows="3"></textarea>
+     </label>
+    </div>
+    <input type="submit" id="submit" value="Submit" />
+  </form>
+</body>
+
+</html>
