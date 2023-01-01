@@ -1,0 +1,252 @@
+:root {
+  --white-yellow: #fffff1;
+  --white-purple: #f1f1ff;
+  --white-brown: #e9dfd6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  /* Taking after freeCodeCamp, font size for rem calculations.
+   * default font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  /* url("https://i.imgur.com/CuA7Tvw.jpeg"); */
+  background-image: url("https://64.media.tumblr.com/2a0ffecf595d1dcd37e4a616750b7777/tumblr_mtv2v5bUwQ1qexlemo1_1280.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: black;
+  background-position: bottom right;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Oxygen', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-yellow);
+}
+
+ul {
+  list-style: none;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 10;
+}
+
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navlink {
+  display: block;
+  font-size: 2.4rem;
+  padding: 1.6rem;
+  transition: background-color 360ms;
+}
+
+.navlink:hover {
+  background-color: rgba(241,241,255, .8);
+}
+
+section {
+  background-color: rgba(0, 0, 0, .8);
+  margin: 6.3rem auto 6rem auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* WELCOME SECTION */
+
+#welcome-section {
+  height: 100vh;
+  display: flex;
+}
+
+#welcome-box {
+  width: 1000px;
+  text-align: left;
+  color: var(--white-purple);
+  margin: 0 auto;
+  padding-top: 4em;
+  padding-left: 1em;
+}
+
+/* PROJECT SECTION */
+
+#projects > h2, #contact > h2 {
+  color: var(--white-purple);
+  text-align: center;
+}
+
+h2 {
+  padding-bottom: 2em;
+}
+
+.projects-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+.project-tile {
+  display: block;
+  min-height: 6em;
+  position: relative;
+  box-shadow: inset 0 0 0 1px var(--white-yellow);
+  box-styling: border-box;
+  transition: background-color 360ms;
+}
+.project-tile::before, .project-tile::after {
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.project-tile-info {
+  position: absolute;
+  text-align: end;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: 0.5em;
+}
+
+.project-tile::before, .project-tile::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.project-tile::before {
+  top: 0;
+  left: 0;
+}
+
+.project-tile::after {
+  bottom: 0;
+  right: 0;
+}
+
+.project-tile:hover {
+  background-color: rgba(241,241,255, .16);
+}
+
+.project-tile:hover::before, .project-tile:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.project-tile:hover::before {
+  border-top-color: var(--white-brown);
+  border-right-color: var(--white-brown);
+  transition: width 0.25s ease-out,
+    height 0.25s ease-out 0.25s;
+}
+
+.project-tile:hover::after {
+  border-bottom-color: var(--white-brown);
+  border-left-color: var(--white-brown);
+  transition: border-color 0s ease-out 0.5s,
+    width 0.25s ease-out 0.5s,
+    height 0.25s ease-out 0.75s;
+}
+
+/* CONTACT SECTION */
+
+#contact {
+  height: 50vh;
+  min-height: 12rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 1em;
+  font-size: 2rem;
+}
+
+.contact-container a {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+}
+
+.contact-container a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--white-brown);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.contact-container a::after {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.contact-container a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  font-size: 1.2rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 1em;
+  font-style: italic;
+}
+footer p a {
+  color: #EFE9E3;
+}
+
+/* MEDIA */
+
+@media (max-width:500px) {
+  nav > ul {
+    column-gap: 1rem;
+  }
+  .navlink {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
