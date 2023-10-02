@@ -5,7 +5,7 @@ As the name implies, this contains personal projects.
 - <a href="https://github.com/raechiang/Personal/tree/master/2019-04/ConsumablesCharting">2019-04/ConsumablesCharting</a>: (Java) simple project that generates a graph meant for comparing and viewing expenditures
 - <a href="https://github.com/raechiang/Personal/tree/master/2019-06/GongfuTimer">2019-06/GongfuTimer</a>: (Java) an Android app that runs and saves timers (work in progress)
 - <a href="https://github.com/raechiang/Personal/tree/master/2021-04/MovieScheduling">2021-04/MovieScheduling</a>: (C++) simple project that finds time windows for a movie to watch given weekly availabilities of viewers
-- <a href="https://github.com/raechiang/Personal/tree/master/2022-12/freeCodeCamp_ResponsiveWebDesign">2022-12/freeCodeCamp_ResponsiveWebDesign</a>: Free Code Camp projects, including making a survey form, a tribute page, a technical document page, a project landing page, and a personal portfolio page
+- <a href="https://github.com/raechiang/Personal/tree/master/2022-12/freeCodeCamp_ResponsiveWebDesign">2022-12/freeCodeCamp_ResponsiveWebDesign</a>: Free Code Camp projects, including making a survey form, a tribute page, a technical document page, a product landing page, and a personal portfolio page
 ## Sudoku Generator
 I used to play a lot of sudoku, so I wrote a generator kind of on a whim. It just uses backtracking. I did some light comparison of different board initiations over 55000 generations for fun.
 ## Consumables Chart Generator
