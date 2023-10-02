@@ -1,5 +1,5 @@
 # freeCodeCamp Responsive Web Design Projects
-This directory contains my five projects for freeCodeCamp's responsive web design curriculum [(link)](https://www.freecodecamp.org/learn/2022/responsive-web-design/). This taught me more about HTML and CSS, and I also learned to make webpages that respond to different screen sizes, which is important in a day where computers, tablets, and mobile phones are all used to access the web.
+This directory contains my five projects for freeCodeCamp's responsive web design curriculum ([link](https://www.freecodecamp.org/learn/2022/responsive-web-design/)). This taught me more about HTML and CSS, and I also learned to make webpages that respond to different screen sizes, which is important in a day where computers, tablets, and mobile phones are all used to access the web.
 
 ## Project 1: Survey Form
 This is a simple app with different types of input fields and a bit of input validation.
@@ -34,11 +34,11 @@ I'm pretty pleased with this one because I put a lot of effort in button, format
 This app shows off a product, Magic Frogs. The navbar and layouts are all sensitive to window size.
 
 <p align="center">
-  <img src="https://github.com/raechiang/Personal/blob/master/2022-12/freeCodeCamp_ResponsiveWebDesign/P4%20ProductLandingPage/p3_preview_big.png" alt="Image of the survey form page.">
+  <img src="https://github.com/raechiang/Personal/blob/master/2022-12/freeCodeCamp_ResponsiveWebDesign/P4%20ProductLandingPage/p4_preview_big.png" alt="Image of the survey form page.">
 </p>
 
 <p align="center">
-  <img src="https://github.com/raechiang/Personal/blob/master/2022-12/freeCodeCamp_ResponsiveWebDesign/P4%20ProductLandingPage/p3_preview_small.png" alt="Image of the survey form page.">
+  <img src="https://github.com/raechiang/Personal/blob/master/2022-12/freeCodeCamp_ResponsiveWebDesign/P4%20ProductLandingPage/p4_preview_small.png" alt="Image of the survey form page.">
 </p>
 
 This was also a fun project for me because I played a lot with the aesthetics and made up a silly product. To improve it, I would have the top image resize with the window, since everything else resizes already.
