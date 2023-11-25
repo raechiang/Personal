@@ -1,0 +1,28 @@
+{
+    "src_meta": {
+        "name": "JHancock",
+        "offset": 4,
+        "text_name_line": 6,
+        "text_table_start": 11,
+        "text_table_end": 17,
+        "column_names": ["Name", "Policy Number", "Producer Code", "Client Name", "Product Line", "Policy Year Date", "Freq", "Premium", "Credit Date", "Share", "%", "Earn Type*", "Amount"]
+    },
+    "col_map": {
+        "Policy Number": "Policy #",
+        "Client Name": "Applicant",
+        "Freq": "Mode",
+        "Premium": "Premium",
+        "Credit Date": "Effective Date",
+        "Amount": {
+            "Earn Type": {
+                "REN": "Renewal",
+                "RN-EX": "Renewal",
+                "FY": "First Year",
+                "FY-EX": "First Year",
+                "FYC": "First Year",
+                "SI": "First Year",
+                "VB": "First Year"
+            }
+        }
+    }
+}

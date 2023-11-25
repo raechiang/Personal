@@ -1,0 +1,22 @@
+{
+    "src_meta": {
+        "name": "Allianz",
+        "offset": 10
+    },
+    "col_map": {
+        "Policy Number": "Policy #",
+        "Insured/Annuitant Name": "Applicant",
+        "Product Type": "Plan",
+        "Line of Business": "Product Type",
+        "Bill Mode Description": "Mode",
+        "Comm Base": "Premium",
+        "Commission Amount": {
+            "Description": {
+                "First Year": "First Year",
+                "Renewal Premium": "Renewal"
+            }
+        },
+        "Agent Name": "Employee Name",
+        "Transaction Date": "Effective Date"
+    }
+}
